@@ -4,7 +4,6 @@ from utils.settings import WEB_BASE_URL_API, USERS
 
 @pytest.mark.user
 def test_list_users(auth_headers, fetch_all_elements):
-    # Para Troubleshooting
     users, meta = fetch_all_elements(
         f"{WEB_BASE_URL_API}{USERS}",
         headers=auth_headers,

@@ -5,7 +5,7 @@ from pages.UI.signup_page import SignupPage
 faker = Faker()
 
 @pytest.mark.login
-def test_login(logged_in):
+def test_login_ui(logged_in):
     # Si la fixture no lanza excepcion implica que el login fue exitoso
     assert True
 

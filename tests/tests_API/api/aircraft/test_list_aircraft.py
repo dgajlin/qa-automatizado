@@ -4,7 +4,6 @@ from utils.settings import WEB_BASE_URL_API, AIRCRAFT
 
 @pytest.mark.aircraft
 def test_list_aircraft(auth_headers, fetch_all_elements):
-    # Para Troubleshooting
     aircraft, meta = fetch_all_elements(
         f"{WEB_BASE_URL_API}{AIRCRAFT}",
         headers=auth_headers,

@@ -4,7 +4,6 @@ from utils.settings import WEB_BASE_URL_API, AIRPORTS
 
 @pytest.mark.airport
 def test_list_airports(auth_headers, fetch_all_elements):
-    # Para Troubleshooting
     airports, meta = fetch_all_elements(
         f"{WEB_BASE_URL_API}{AIRPORTS}",
         headers=auth_headers,

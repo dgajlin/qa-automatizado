@@ -156,7 +156,7 @@ En caso de fallo en los tests de UI, se genera automáticamente un **screenshot*
 
 ## 👨‍💻 Autores
 
-Proyecto desarrollado con fines de práctica académica para CodigoFacilito (r) por Dario Ajlin  
+Proyecto desarrollado con fines de práctica académica para CodigoFacilito (C) por Dario Ajlin  
 Puedes usarlo como referencia para tus propios proyectos de QA.
 
 ---

@@ -16,36 +16,36 @@ class BasePage:
                     EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.fixed.inset-0.z-50"))
                 )
             except Exception:
-                print("Error el overlay no desapareció")
+                print("Error el overlay no desapareció luego del timeout")
 
-    def visit(self, url: str):
+    def visit(self, url):
         self.driver.get(url)
         #self._wait_for_overlay()
 
-    def type(self, locator: tuple[str, str], text: str):
+    def type(self, locator, text):
         element = self.driver.find_element(*locator)
         element.clear()
         element.send_keys(text)
 
-    def text_of_element(self, locator: tuple[str, str]) -> str:
+    def text_of_element(self, locator):
         return self.driver.find_element(*locator).text
 
-    def placeholder_of_element(self, locator: tuple[str, str]) -> str:
+    def placeholder_of_element(self, locator):
         #self._wait_for_overlay()
         return self.driver.find_element(*locator).get_attribute("placeholder")
 
-    def element_is_visible(self, locator: tuple[str, str]) -> bool:
+    def element_is_visible(self, locator):
         #self._wait_for_overlay()
         return self.driver.find_element(*locator).is_displayed()
 
-    def click(self, locator: tuple[str, str]):
+    def click(self, locator):
         self._wait_for_overlay()
         element = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(locator)
         )
         element.click()
 
-    def click_direct(self, locator: tuple[str, str]):
+    def click_direct(self, locator):
         element = self.driver.find_element(*locator)
         try:
             element.click()

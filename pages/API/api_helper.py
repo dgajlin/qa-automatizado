@@ -13,7 +13,7 @@ def login(username, password, api_request):
     )
 
 def get_admin_token(username, password, api_request):
-    # Obtiene el token del admin y valida respuesta
+    # Obtener el token del admin y validar respuesta
     r = login(username, password, api_request)
     assert r.status_code in (200, 201), f"Login admin falló: {r.status_code} - {r.text}"
     token = r.json().get("access_token")
@@ -95,7 +95,6 @@ def delete_aircraft_by_code(aircraft_id, api_request, auth_headers):
     return r.status_code in (200, 204)
 
 # --------------------- FLIGHT ---------------------
-
 
 def create_flight(origin, destination, departure_time, arrival_time, base_price, aircraft_id, api_request, auth_headers):
     # Crear vuelo

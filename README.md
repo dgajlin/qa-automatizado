@@ -53,46 +53,63 @@ python -m pytest -v --tb=short --html=report.html --self-contained-html
 
 ## 🧪 Estructura de Tests
 
-### 🔹 Tests de UI (ShopHub Commerce)
+### 🔹 Tests de UI (Frontend ShopHub Commerce)
 
 Estos tests usan **Selenium + Pytest** para validar la experiencia de usuario en el sitio de compras:
 
-- **`test_homepage.py`**  
-  Verifica que la página principal cargue correctamente y que los elementos clave estén presentes (títulos, botones, productos).
-
-- **`test_checkout.py`**  
-  - Valida los **placeholders** de los inputbox en el proceso de checkout.  
-  - Captura un **screenshot en caso de fallo** para facilitar el debugging.
-
-- **`test_login_ui.py`**  
-  - Casos positivos: login exitoso con credenciales válidas.  
-  - Casos negativos: manejo de errores con credenciales inválidas o campos vacíos.
-
-- **`test_navigation.py`**  
-  Confirma la correcta navegación entre secciones (inicio → productos → carrito → checkout → confirmación).
+- test_login_ui.py: login en la aplicación web con Selenium (credenciales válidas/erróneas)
+- test_purchase_e2e.py: flujo end-to-end de compra (login → carrito → checkout → confirmación -> pago)
+- test_validation.py: validación de campos del formulario (placeholders, mensajes de error, restricciones)
 
 ---
 
-### 🔹 Tests de API (Backends Aerolínea)
+### 🔹 Tests de API (Funcionales)
 
 Estos tests validan los endpoints REST usando **requests + Pytest**.
 
-- **`test_auth_api.py`**  
-  - **Login** con credenciales correctas retorna `200 OK` y token válido.  
-  - **Login fallido** retorna errores esperados (`401`, `422`).
+aircraft:
+  - test_create_aircraft.py: crea un nuevo avión y valida status/response
+  - test_delete_aircraft.py: elimina un avión existente
+  - test_list_aircraft.py: lista todos los aviones disponibles
+  - test_update_aircraft.py: actualiza datos de un avión
 
-- **`test_users_api.py`**  
-  - Obtener lista de usuarios.  
-  - Crear usuario nuevo (positivo y negativo: email duplicado).  
-  - Eliminar usuario temporal de pruebas.
+airports:
+  - test_create_airport.py: crea un nuevo aeropuerto
+  - test_delete_airport.py: elimina un aeropuerto existente
+  - test_list_airports.py: lista aeropuertos
+  - test_update_airport.py: actualiza datos de un aeropuerto
 
-- **`test_airports_api.py`**  
-  - Validación de endpoints `/airports` de la aerolínea.  
-  - Respuesta en formato JSON y estructura de datos esperada.
+flights:
+  - test_create_flight.py: crea un vuelo nuevo
+  - test_delete_flight.py: elimina un vuelo
+  - test_list_flight.py: lista vuelos existentes
+  - test_update_flight.py: actualiza datos de un vuelo
 
-- **`test_movies_api.py`**  
-  - Validación de cartelera y detalles de películas en la API de cine.  
-  - Comprobación de que los campos requeridos existan.
+users:
+  - test_login_api.py: login de usuario
+  - test_signup.py: signup de usuario nuevo
+  - test_list_users.py: obtener lista de usuarios
+  - test_update_user.py: actualizar datos de usuario
+  - test_delete_user.py: eliminar usuario
+
+---
+
+### 🔹 Tests de Schema (Validación de contratos)
+
+Estos tests validan que las respuestas de la API cumplen con los **JSON Schema** definidos.
+
+aircraft:
+  - test_create_schema_aircraft.py: validar esquema de creación de avión
+
+airports:
+  - test_create_schema_airport.py: validar esquema de creación de aeropuerto
+
+flights:
+  - test_create_schema_flight.py: validar esquema de creación de vuelo
+
+users:
+  - test_login_schema.py: validar esquema de login
+  - test_signup_schema.py: validar esquema de signup de usuario
 
 ---
 
@@ -107,6 +124,8 @@ qa/
 │── tests/
 │   ├── tests_UI/              # Pruebas de UI con Selenium (ShopHub Commerce)
 │   ├── tests_API/             # Pruebas de API (Aerolínea)
+│       ├── api/               # Pruebas funcionales de API
+│       ├── schema/            # Pruebas de schema de API
 │       ├── conftest.py        # Fixtures compartidos para pruebas de API
 │── utils/
 │   ├── driver_factory.py      # Definicion de drivers Selenium
@@ -121,7 +140,7 @@ qa/
 
 ## 🔧 Tecnologías Utilizadas
 
-- [Python 3.x](https://www.python.org/)  
+- [Python 3.13](https://www.python.org/)  
 - [Pytest](https://docs.pytest.org/)  
 - [Selenium](https://www.selenium.dev/)  
 - [Requests](https://docs.python-requests.org/)  
@@ -156,7 +175,7 @@ En caso de fallo en los tests de UI, se genera automáticamente un **screenshot*
 
 ## 👨‍💻 Autores
 
-Proyecto desarrollado con fines de práctica académica para CodigoFacilito (C) por Dario Ajlin  
+Proyecto desarrollado con fines de práctica académica para codigofacilito © por Dario Ajlin  
 Puedes usarlo como referencia para tus propios proyectos de QA.
 
 ---
@@ -168,7 +187,8 @@ Para ejecutar los tests automáticamente en cada push/pull request, crea el arch
 **`.github/workflows/tests.yml`**
 
 ```yaml
-name: Run QA Tests
+name: CI QA Tests
+run-name: CI ${{ github.ref_name }}
 
 on:
   push:
@@ -176,25 +196,59 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+  
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Set up Python
+    - name: Instalar Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11'
+        python-version: '3.13'
+        
+    - name: Cache pip
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: pip-${{ runner.os }}-${{ hashFiles('**/requirements*.txt') }}
+        restore-keys: |
+          pip-${{ runner.os }}-
 
-    - name: Install dependencies
+    - name: Instalar dependencias
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        else
+          pip install pytest selenium webdriver-manager pytest-html pytest-cov behave pytest-bdd
+        fi
 
-    - name: Run pytest
+    - name: Instalar Google Chrome
+      uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: stable
+
+    - name: Ejecutar pruebas con Pytest
       run: |
         pytest -v --tb=short --maxfail=3 --disable-warnings
+
+    - name: Carga de artefactos (reportes y screenshots)
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-artifacts
+        path: |
+          reports/**
+          **/screenshots/**
+        if-no-files-found: ignore
 ```

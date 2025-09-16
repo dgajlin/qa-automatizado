@@ -194,7 +194,6 @@ def call_with_retries(method, url, **kw):
             if 500 <= r.status_code < 600 and i < RETRIES:
                 sleep(BACKOFF * (2 ** i))
                 continue
-            print(f"SALIO CON {r.status_code} LUEGO DE {i+1} INTENTOS")
             return r
         except requests.RequestException as e:
             if i == RETRIES:

@@ -20,7 +20,7 @@ class BasePage:
 
     def visit(self, url):
         self.driver.get(url)
-        #self._wait_for_overlay()
+        self._wait_for_overlay()
 
     def type(self, locator, text):
         element = self.driver.find_element(*locator)
@@ -28,14 +28,15 @@ class BasePage:
         element.send_keys(text)
 
     def text_of_element(self, locator):
+        self._wait_for_overlay()
         return self.driver.find_element(*locator).text
 
     def placeholder_of_element(self, locator):
-        #self._wait_for_overlay()
+        self._wait_for_overlay()
         return self.driver.find_element(*locator).get_attribute("placeholder")
 
     def element_is_visible(self, locator):
-        #self._wait_for_overlay()
+        self._wait_for_overlay()
         return self.driver.find_element(*locator).is_displayed()
 
     def click(self, locator):

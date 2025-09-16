@@ -32,16 +32,14 @@ def configure_screenshot():
 @pytest.mark.validation
 def test_checkout_placeholder(checkout_page: CheckoutPage, locator, expected):
     driver = checkout_page.driver
-
-    # Optencion de la configuracion para los screenshoots
+    # Optencion de la configuracion para los screenshots
     filepath = configure_screenshot()
-
     # Definicion de un test para la verificacion del valor del placeholder de cada inputbox
     try:
         placeholder = checkout_page.placeholder_of_element(locator).strip()
         assert placeholder == expected, f"Se esperaba '{expected}' pero se obtuvo '{placeholder}'"
-    except AssertionError as err:
-        # Guardo el screenshot en caso de fallo
+    except Exception as err:
+        # Guardar el screenshot en caso de fallo
         driver.save_screenshot(filepath)
         raise err
 
@@ -62,16 +60,14 @@ def test_checkout_placeholder(checkout_page: CheckoutPage, locator, expected):
 def test_checkout_required_fields_validation(
     checkout_page: CheckoutPage,
     first_name, last_name, email, phone, street_address, city, postcode, country):
-
+    # Completar el formulario
     checkout_page.fill_checkout_form(
         first_name, last_name, email, phone, street_address, city, postcode, country
     )
-
     try:
         checkout_page.click_direct(CheckoutPage.BUTTON_PLACE_ORDER)
     except UnexpectedAlertPresentException as e:
         assert "Please fill in all required fields" in str(e.alert_text)
-
 
 @pytest.mark.parametrize(
     "first_name, last_name, email, phone, street_address, city, postcode, country, locator, expected_part",
@@ -93,4 +89,3 @@ def test_checkout_validation_error(
 
     # Validar que el mensaje contenga lo esperado
     assert expected_part in msg, f"Esperaba que '{expected_part}' esté en '{msg}'"
-    print(f"Campo {locator}: {msg}")

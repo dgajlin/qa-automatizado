@@ -1,5 +1,9 @@
 import pytest
 from utils.settings import WEB_BASE_URL_API, FLIGHTS
+from faker import Faker
+import string
+
+faker = Faker()
 
 @pytest.mark.parametrize("fields_to_update", [
     ("orig",),
@@ -17,8 +21,8 @@ def test_update_flight(temporary_flight, api_request, auth_headers, fields_to_up
     orig_aircraft_id = flight["aircraft_id"]
 
     # Asignacion de nuevos valores
-    new_origin = f"{orig_origin} Updated"
-    new_destination = f"{orig_destination} Updated"
+    new_origin = faker.unique.bothify(text="???", letters=string.ascii_uppercase)
+    new_destination = faker.unique.bothify(text="???", letters=string.ascii_uppercase)
     departure_time = orig_departure_time
     arrival_time = orig_arrival_time
     base_price = orig_base_price

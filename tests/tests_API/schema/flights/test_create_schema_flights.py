@@ -56,7 +56,7 @@ validator = Draft202012Validator(create_airport_schema, format_checker=FormatChe
          current_datetime, future_datetime, 0, "ABCDE", False),                              # base_price no ingresada
         (faker.unique.bothify(text="???", letters=string.ascii_uppercase),
          faker.unique.bothify(text="???", letters=string.ascii_uppercase),
-         current_datetime, future_datetime, 100, "", False),                                 # aircraft_id, no ingresado
+         current_datetime, future_datetime, 100, "", False),                             # aircraft_id, no ingresado
     ],
 )
 @pytest.mark.schema

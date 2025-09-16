@@ -46,6 +46,7 @@
     &quot;Python tests.Python tests for test_create_schema.test_create_schema (2).executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_create_schema.test_create_schema.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_create_schema.test_signup_schema.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_schema_flights.test_create_schema.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_create_user.test_signup.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_delete_aircraft.test_delete_invalid_aircraft.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_delete_aircraft.test_delete_valid_aircraft.executor&quot;: &quot;Debug&quot;,
@@ -115,7 +116,22 @@
       <recent name="C:\Users\u185764\PycharmProjects\qa-project-dario-ajlin\pages\API" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_validation.test_checkout_placeholder">
+  <component name="RunManager" selected="Python tests.Python tests for test_create_schema_flights.test_create_schema">
+    <configuration name="Python tests for test_create_schema_flights.test_create_schema" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="qa-project-dario-ajlin" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/schema/flights" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_create_schema_flights.test_create_schema&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_signup.test_signup" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="qa-project-dario-ajlin" />
       <option name="ENV_FILES" value="" />
@@ -143,21 +159,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_validation.test_checkout_placeholder&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_validation.test_checkout_required_fields_validation" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="qa-project-dario-ajlin" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_UI" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_validation.test_checkout_required_fields_validation&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -192,19 +193,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python tests.Python tests for test_create_schema_flights.test_create_schema" />
       <item itemvalue="Python tests.Python tests for test_signup.test_signup" />
       <item itemvalue="Python tests.Python tests for test_validation.test_checkout_placeholder" />
-      <item itemvalue="Python tests.Python tests for test_validation.test_checkout_required_fields_validation" />
       <item itemvalue="Python tests.Python tests for test_validation.test_checkout_validation_error" />
       <item itemvalue="Python tests.Python tests in test_signup.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_create_schema_flights.test_create_schema" />
         <item itemvalue="Python tests.Python tests for test_validation.test_checkout_placeholder" />
         <item itemvalue="Python tests.Python tests for test_signup.test_signup" />
         <item itemvalue="Python tests.Python tests in test_signup.py" />
         <item itemvalue="Python tests.Python tests for test_validation.test_checkout_validation_error" />
-        <item itemvalue="Python tests.Python tests for test_validation.test_checkout_required_fields_validation" />
       </list>
     </recent_temporary>
   </component>

@@ -8,15 +8,15 @@ class BasePage:
     def __init__(self, driver: WebDriver) -> None:
         self.driver = driver
 
-    def _wait_for_overlay(self):
-        overlays = self.driver.find_elements(By.CSS_SELECTOR, "div.fixed.inset-0.z-50")
-        if any(o.is_displayed() for o in overlays):
-            try:
-                WebDriverWait(self.driver, 15).until(
-                    EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.fixed.inset-0.z-50"))
+    def _wait_for_overlay(self, timeout=5):
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                EC.invisibility_of_element_located(
+                    (By.CSS_SELECTOR, "div.fixed.inset-0.z-50")
                 )
-            except Exception:
-                print("Error el overlay no desapareció luego del timeout")
+            )
+        except Exception:
+            pass
 
     def visit(self, url):
         self.driver.get(url)

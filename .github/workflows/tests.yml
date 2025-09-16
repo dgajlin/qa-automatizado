@@ -1,0 +1,64 @@
+name: CI QA Tests
+run-name: CI ${{ github.ref_name }}
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+  
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Instalar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+        
+    - name: Cache pip
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: pip-${{ runner.os }}-${{ hashFiles('**/requirements*.txt') }}
+        restore-keys: |
+          pip-${{ runner.os }}-
+
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        else
+          pip install pytest selenium webdriver-manager pytest-html pytest-cov behave pytest-bdd
+        fi
+
+    - name: Instalar Google Chrome
+      uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: stable
+
+    - name: Ejecutar pruebas con Pytest
+      run: |
+        pytest -v --tb=short --maxfail=3 --disable-warnings
+
+    - name: Carga de artefactos (reportes y screenshots)
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-artifacts
+        path: |
+          reports/**
+          **/screenshots/**
+        if-no-files-found: ignore

@@ -67,25 +67,25 @@ Estos tests usan **Selenium + Pytest** para validar la experiencia de usuario en
 
 Estos tests validan los endpoints REST usando **requests + Pytest**.
 
-aircraft:
+**Aircraft**:
   - test_create_aircraft.py: crea un nuevo avión y valida status/response
   - test_delete_aircraft.py: elimina un avión existente
   - test_list_aircraft.py: lista todos los aviones disponibles
   - test_update_aircraft.py: actualiza datos de un avión
 
-airports:
+**Airports**:
   - test_create_airport.py: crea un nuevo aeropuerto
   - test_delete_airport.py: elimina un aeropuerto existente
   - test_list_airports.py: lista aeropuertos
   - test_update_airport.py: actualiza datos de un aeropuerto
 
-flights:
+**Flights**:
   - test_create_flight.py: crea un vuelo nuevo
   - test_delete_flight.py: elimina un vuelo
   - test_list_flight.py: lista vuelos existentes
   - test_update_flight.py: actualiza datos de un vuelo
 
-users:
+**Users**:
   - test_login_api.py: login de usuario
   - test_signup.py: signup de usuario nuevo
   - test_list_users.py: obtener lista de usuarios
@@ -98,16 +98,16 @@ users:
 
 Estos tests validan que las respuestas de la API cumplen con los **JSON Schema** definidos.
 
-aircraft:
+**Aircraft**:
   - test_create_schema_aircraft.py: validar esquema de creación de avión
 
-airports:
+**Airports**:
   - test_create_schema_airport.py: validar esquema de creación de aeropuerto
 
-flights:
+**Flights**:
   - test_create_schema_flight.py: validar esquema de creación de vuelo
 
-users:
+**Users**:
   - test_login_schema.py: validar esquema de login
   - test_signup_schema.py: validar esquema de signup de usuario
 
@@ -120,7 +120,7 @@ qa/
 │── pages/                     
 │   ├── UI/                    # Page Objects / Modelos para pruebas de UI
 │   ├── API/
-│       ├── api_helper.py      # Definicion del API Helper para pruebas de API
+│       ├── api_helper.py      # Definición del API Helper para pruebas de API
 │── tests/
 │   ├── tests_UI/              # Pruebas de UI con Selenium (ShopHub Commerce)
 │   ├── tests_API/             # Pruebas de API (Aerolínea)
@@ -128,8 +128,8 @@ qa/
 │       ├── schema/            # Pruebas de schema de API
 │       ├── conftest.py        # Fixtures compartidos para pruebas de API
 │── utils/
-│   ├── driver_factory.py      # Definicion de drivers Selenium
-│   ├── settings.py            # Configuración a partir de variables de entorno
+│   ├── driver_factory.py      # Definición de drivers Selenium
+│   ├── settings.py            # Seteos desde las variables de entorno
 │── .env                       # Variables de entorno: credenciales y constantes
 │── pytest.ini                 # Configuración de Pytest (rutas y marcadores)
 │── requirements.txt           # Librerías y dependencias del proyecto
@@ -170,6 +170,7 @@ qa/
 ## 📸 Evidencias
 
 En caso de fallo en los tests de UI, se genera automáticamente un **screenshot** que se guarda en la carpeta `tests/tests_UI/screenshots/`.
+Paralelamente, los reportes se guardan en la carpeta raíz con el nombre ingresado por parametro al ejecutar la prueba. 
 
 ---
 

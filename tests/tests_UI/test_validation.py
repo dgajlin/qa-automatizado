@@ -10,7 +10,7 @@ faker = Faker()
 
 def configure_screenshot():
     # Definicion de la configuracion para capturar las pantallas de error
-    path = "screeshots"
+    path = "screenshots"
     filename = f"error_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
     if not os.path.exists(path):
         os.makedirs(path)
@@ -32,7 +32,7 @@ def configure_screenshot():
 @pytest.mark.validation
 def test_checkout_placeholder(checkout_page: CheckoutPage, locator, expected):
     driver = checkout_page.driver
-    # Optencion de la configuracion para los screenshots
+    # Obtencion de la configuracion para los screenshots
     filepath = configure_screenshot()
     # Definicion de un test para la verificacion del valor del placeholder de cada inputbox
     try:

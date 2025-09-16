@@ -140,7 +140,7 @@ qa/
 
 ## 🔧 Tecnologías Utilizadas
 
-- [Python 3.13](https://www.python.org/)  
+- [Python 3.11](https://www.python.org/)  
 - [Pytest](https://docs.pytest.org/)  
 - [Selenium](https://www.selenium.dev/)  
 - [Requests](https://docs.python-requests.org/)  
@@ -169,7 +169,7 @@ qa/
 
 ## 📸 Evidencias
 
-En caso de fallo en los tests de UI, se genera automáticamente un **screenshot** que se guarda en la carpeta `./screenshots/`.
+En caso de fallo en los tests de UI, se genera automáticamente un **screenshot** que se guarda en la carpeta `tests/tests_UI/screenshots/`.
 
 ---
 
@@ -214,7 +214,7 @@ jobs:
     - name: Instalar Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.13'
+        python-version: '3.11'
         
     - name: Cache pip
       uses: actions/cache@v4

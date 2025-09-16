@@ -25,7 +25,7 @@ jobs:
     - name: Instalar Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.13'
+        python-version: '3.11'
         
     - name: Cache pip
       uses: actions/cache@v4
@@ -44,6 +44,9 @@ jobs:
           pip install pytest selenium webdriver-manager pytest-html pytest-cov behave pytest-bdd
         fi
 
+    - name: Instalar proyecto local
+      run: pip install -e .
+
     - name: Instalar Google Chrome
       uses: browser-actions/setup-chrome@v1
       with:
@@ -60,5 +63,5 @@ jobs:
         name: test-artifacts
         path: |
           reports/**
-          **/screenshots/**
+          **/tests/tests_UI/screenshots/**
         if-no-files-found: ignore

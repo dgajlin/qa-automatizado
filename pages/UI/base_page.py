@@ -8,13 +8,13 @@ class BasePage:
     def __init__(self, driver: WebDriver) -> None:
         self.driver = driver
 
-    def _wait_for_overlay(self, timeout=8):
+    def _wait_for_overlay(self, timeout=6):
         try:
-            WebDriverWait(self.driver, timeout).until(
-                EC.invisibility_of_element_located(
-                    (By.CSS_SELECTOR, "div.fixed.inset-0.z-50")
+            overlays = self.driver.find_elements(By.CSS_SELECTOR, "div.fixed.inset-0.z-50")
+            if overlays and any(o.is_displayed() for o in overlays):
+                WebDriverWait(self.driver, timeout).until(
+                    EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.fixed.inset-0.z-50"))
                 )
-            )
         except Exception:
             return False
         return True
@@ -24,7 +24,6 @@ class BasePage:
         self._wait_for_overlay()
 
     def type(self, locator, text):
-        self._wait_for_overlay()
         element = WebDriverWait(self.driver, 5).until(
             EC.visibility_of_element_located(locator)
         )
@@ -32,21 +31,18 @@ class BasePage:
         element.send_keys(text)
 
     def text_of_element(self, locator):
-        self._wait_for_overlay()
         WebDriverWait(self.driver, 5).until(
             EC.visibility_of_element_located(locator)
         )
         return self.driver.find_element(*locator).text
 
     def placeholder_of_element(self, locator):
-        self._wait_for_overlay()
         element = WebDriverWait(self.driver, 5).until(
             EC.visibility_of_element_located(locator)
         )
         return element.get_attribute("placeholder")
 
     def element_is_visible(self, locator):
-        self._wait_for_overlay()
         try:
             WebDriverWait(self.driver, 5).until(
                 EC.visibility_of_element_located(locator)

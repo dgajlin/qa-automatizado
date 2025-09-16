@@ -23,21 +23,36 @@ class BasePage:
         self._wait_for_overlay()
 
     def type(self, locator, text):
-        element = self.driver.find_element(*locator)
+        self._wait_for_overlay()
+        element = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(locator)
+        )
         element.clear()
         element.send_keys(text)
 
     def text_of_element(self, locator):
         self._wait_for_overlay()
+        WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(locator)
+        )
         return self.driver.find_element(*locator).text
 
     def placeholder_of_element(self, locator):
         self._wait_for_overlay()
-        return self.driver.find_element(*locator).get_attribute("placeholder")
+        element = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(locator)
+        )
+        return element.get_attribute("placeholder")
 
     def element_is_visible(self, locator):
         self._wait_for_overlay()
-        return self.driver.find_element(*locator).is_displayed()
+        try:
+            WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_element_located(locator)
+            )
+            return True
+        except Exception:
+            return False
 
     def click(self, locator):
         self._wait_for_overlay()

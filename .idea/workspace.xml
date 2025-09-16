@@ -193,10 +193,10 @@
     </configuration>
     <list>
       <item itemvalue="Python tests.Python tests for test_signup.test_signup" />
-      <item itemvalue="Python tests.Python tests in test_signup.py" />
-      <item itemvalue="Python tests.Python tests for test_validation.test_checkout_required_fields_validation" />
       <item itemvalue="Python tests.Python tests for test_validation.test_checkout_placeholder" />
+      <item itemvalue="Python tests.Python tests for test_validation.test_checkout_required_fields_validation" />
       <item itemvalue="Python tests.Python tests for test_validation.test_checkout_validation_error" />
+      <item itemvalue="Python tests.Python tests in test_signup.py" />
     </list>
     <recent_temporary>
       <list>

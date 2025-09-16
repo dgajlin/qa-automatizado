@@ -31,7 +31,7 @@ class BasePage:
         element.send_keys(text)
 
     def text_of_element(self, locator):
-        element = WebDriverWait(self.driver, 5).until(
+        element = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(locator)
         )
         return element.text

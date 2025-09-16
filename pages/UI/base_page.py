@@ -31,10 +31,10 @@ class BasePage:
         element.send_keys(text)
 
     def text_of_element(self, locator):
-        WebDriverWait(self.driver, 5).until(
+        element = WebDriverWait(self.driver, 5).until(
             EC.visibility_of_element_located(locator)
         )
-        return self.driver.find_element(*locator).text
+        return element.text
 
     def placeholder_of_element(self, locator):
         element = WebDriverWait(self.driver, 5).until(
@@ -59,12 +59,10 @@ class BasePage:
                     EC.element_to_be_clickable(locator)
                 )
                 element.click()
-                self._wait_for_overlay(timeout)
                 return
             except ElementClickInterceptedException:
                 if attempt == retries - 1:
                     raise
-                self._wait_for_overlay(timeout)
 
     def click_direct(self, locator):
         element = self.driver.find_element(*locator)

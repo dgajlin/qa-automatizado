@@ -8,7 +8,7 @@ class BasePage:
     def __init__(self, driver: WebDriver) -> None:
         self.driver = driver
 
-    def _wait_for_overlay(self, timeout=10):
+    def _wait_for_overlay(self, timeout=7):
         try:
             WebDriverWait(self.driver, timeout).until(
                 EC.invisibility_of_element_located(

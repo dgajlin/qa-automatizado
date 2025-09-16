@@ -175,14 +175,14 @@ En caso de fallo en los tests de UI, se genera automáticamente un **screenshot*
 
 ## 👨‍💻 Autores
 
-Proyecto desarrollado con fines de práctica académica para codigofacilito © por Dario Ajlin  
+Proyecto desarrollado con fines de práctica académica para codigofacilito© por Dario Ajlin  
 Puedes usarlo como referencia para tus propios proyectos de QA.
 
 ---
 
 # ⚙️ CI/CD con GitHub Actions
 
-Para ejecutar los tests automáticamente en cada push/pull request, crea el archivo:  
+Para ejecutar los tests automáticamente en cada push/pull request, se crea el archivo:  
 
 **`.github/workflows/tests.yml`**
 
@@ -240,6 +240,7 @@ jobs:
 
     - name: Ejecutar pruebas con Pytest
       run: |
+        export PYTHONPATH=$PYTHONPATH:$(pwd)
         pytest -v --tb=short --maxfail=3 --disable-warnings
 
     - name: Carga de artefactos (reportes y screenshots)
@@ -249,6 +250,6 @@ jobs:
         name: test-artifacts
         path: |
           reports/**
-          **/screenshots/**
+          **/tests/tests_UI/screenshots/**
         if-no-files-found: ignore
 ```

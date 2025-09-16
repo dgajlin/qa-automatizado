@@ -52,7 +52,8 @@ jobs:
     - name: Ejecutar pruebas con Pytest
       run: |
         export PYTHONPATH=$PYTHONPATH:$(pwd)
-        pytest -v --tb=short --maxfail=3 --disable-warnings
+        pytest -v --tb=short --disable-warnings \
+               --html=reports/report.html --self-contained-html
 
     - name: Carga de artefactos (reportes y screenshots)
       if: ${{ always() }}
@@ -61,5 +62,5 @@ jobs:
         name: test-artifacts
         path: |
           reports/**
-          **/tests/tests_UI/screenshots/**
+          tests/tests_UI/screenshots/**
         if-no-files-found: ignore

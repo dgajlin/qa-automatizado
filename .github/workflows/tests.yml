@@ -44,9 +44,6 @@ jobs:
           pip install pytest selenium webdriver-manager pytest-html pytest-cov behave pytest-bdd
         fi
 
-    - name: Instalar proyecto local
-      run: pip install -e .
-
     - name: Instalar Google Chrome
       uses: browser-actions/setup-chrome@v1
       with:
@@ -54,6 +51,7 @@ jobs:
 
     - name: Ejecutar pruebas con Pytest
       run: |
+        export PYTHONPATH=$PYTHONPATH:$(pwd)
         pytest -v --tb=short --maxfail=3 --disable-warnings
 
     - name: Carga de artefactos (reportes y screenshots)

@@ -30,10 +30,12 @@ def test_delete_invalid_flight(flight_number, expected, auth_headers, api_reques
     )
     assert r.status_code == 200, f"list_flights devolvió {r.status_code}: {r.text}"
     flights = r.json()
+    if isinstance(flights, dict) and "flights" in flights:
+        flights = flights["flights"]
     # Buscar si el vuelo existe en la lista
     found = next((u for u in flights if u.get("id", "") == flight_id), None)
     if found:
-        flight_number = found.get("id")
+        flight_id = found.get("id")
     # Intentar borrar el vuelo (inexistente o encontrado)
     r = api_request(
         "DELETE",

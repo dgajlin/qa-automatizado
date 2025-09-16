@@ -190,8 +190,12 @@ def call_with_retries(method, url, **kw):
     for i in range(RETRIES + 1):
         try:
             r = requests.request(method, url, timeout=timeout, **kw)
+            try:
+                detail = r.json().get("detail")
+            except Exception:
+                detail = None
             # Reintentar para codigos de error 5xx y "Simulated 4xx bug" (hasta "RETRIES" veces)
-            if ((500 <= r.status_code < 600) or (r.json().get("detail") == "Simulated 4xx bug")) and i < RETRIES:
+            if ((500 <= r.status_code < 600) or (detail == "Simulated 4xx bug")) and i < RETRIES:
                 sleep(BACKOFF * (2 ** i))
                 continue
             return r

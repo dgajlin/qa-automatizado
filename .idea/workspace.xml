@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99c83a7c-2653-4018-b9ee-bccc7ccbfa29" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/UI/category_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/tests_UI/test_navigation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/UI/home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/UI/home_page.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +68,8 @@
     &quot;Python tests.Python tests for test_e2e_purchase.test_purchase_product.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_e2e_purchase.test_user_purchase_product_positive.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_get_payments.test_get_payments.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_goto_categories.test_goto_categories.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_gotocategories.test_signup.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_list_aircraft.test_list_aircraft.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_list_airports.test_list_airports.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_list_airports.test_list_users.executor&quot;: &quot;Run&quot;,
@@ -80,6 +86,7 @@
     &quot;Python tests.Python tests for test_login.test_signup.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_login_schema.test_login_schema.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_login_schema.test_login_schema_only.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_navigation.test_navigation.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_schema.test_login_request_schema_locally.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_schema.test_login_schema.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_schema.test_signup_schema.executor&quot;: &quot;Run&quot;,
@@ -116,7 +123,7 @@
       <recent name="C:\Users\u185764\PycharmProjects\qa-project-dario-ajlin\pages\API" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_create_schema_flights.test_create_schema">
+  <component name="RunManager" selected="Python tests.Python tests for test_navigation.test_navigation">
     <configuration name="Python tests for test_create_schema_flights.test_create_schema" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="qa-project-dario-ajlin" />
       <option name="ENV_FILES" value="" />
@@ -132,18 +139,18 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_signup.test_signup" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_navigation.test_navigation" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="qa-project-dario-ajlin" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/api/users" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_UI" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_signup.test_signup&quot;" />
+      <option name="_new_target" value="&quot;test_navigation.test_navigation&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -162,7 +169,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_validation.test_checkout_validation_error" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.tests_UI.test_goto_categories" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="qa-project-dario-ajlin" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -173,39 +180,39 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_validation.test_checkout_validation_error&quot;" />
+      <option name="_new_target" value="&quot;tests.tests_UI.test_goto_categories&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_signup.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.tests_UI.test_navigation.test_goto_categories" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="qa-project-dario-ajlin" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/api/users" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_UI" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/tests_API/api/users/test_signup.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;tests.tests_UI.test_navigation.test_goto_categories&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python tests.Python tests for test_navigation.test_navigation" />
+      <item itemvalue="Python tests.Python tests for tests.tests_UI.test_goto_categories" />
+      <item itemvalue="Python tests.Python tests for tests.tests_UI.test_navigation.test_goto_categories" />
       <item itemvalue="Python tests.Python tests for test_create_schema_flights.test_create_schema" />
-      <item itemvalue="Python tests.Python tests for test_signup.test_signup" />
       <item itemvalue="Python tests.Python tests for test_validation.test_checkout_placeholder" />
-      <item itemvalue="Python tests.Python tests for test_validation.test_checkout_validation_error" />
-      <item itemvalue="Python tests.Python tests in test_signup.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_navigation.test_navigation" />
+        <item itemvalue="Python tests.Python tests for tests.tests_UI.test_navigation.test_goto_categories" />
+        <item itemvalue="Python tests.Python tests for tests.tests_UI.test_goto_categories" />
         <item itemvalue="Python tests.Python tests for test_create_schema_flights.test_create_schema" />
         <item itemvalue="Python tests.Python tests for test_validation.test_checkout_placeholder" />
-        <item itemvalue="Python tests.Python tests for test_signup.test_signup" />
-        <item itemvalue="Python tests.Python tests in test_signup.py" />
-        <item itemvalue="Python tests.Python tests for test_validation.test_checkout_validation_error" />
       </list>
     </recent_temporary>
   </component>

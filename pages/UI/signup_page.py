@@ -1,5 +1,6 @@
 from pages.UI.base_page import BasePage
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
 
 class SignupPage(BasePage):
 
@@ -18,4 +19,7 @@ class SignupPage(BasePage):
         self.type(self.INPUT_ZIPCODE, zipcode)
         self.type(self.INPUT_PASSWORD, password)
         self.click(self.BUTTON_SIGNUP)
-        assert "Signup Successful" in self.text_of_element(self.TEXT_SIGNUP)
+        try:
+            return "Signup Successful" in self.text_of_element(self.TEXT_SIGNUP)
+        except TimeoutException:
+            return False

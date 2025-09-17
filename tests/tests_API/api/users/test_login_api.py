@@ -13,7 +13,7 @@ faker = Faker()
     ],
 )
 @pytest.mark.login
-def test_login_api(api_request, username, password, expected):
+def test_login(api_request, username, password, expected):
     payload = {"username": username, "password": password}
     r = api_request(
         "POST",

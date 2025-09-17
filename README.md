@@ -57,7 +57,7 @@ python -m pytest -v --tb=short --html=report.html --self-contained-html
 
 Estos tests usan **Selenium + Pytest** para validar la experiencia de usuario en el sitio de compras:
 
-- test_login_ui.py: login en la aplicación web con Selenium (credenciales válidas/erróneas)
+- test_login_ui.py: login/signup en la aplicación web con Selenium (credenciales válidas/erróneas)
 - test_purchase_e2e.py: flujo end-to-end de compra (login → carrito → checkout → confirmación -> pago)
 - test_validation.py: validación de campos del formulario (placeholders, mensajes de error, restricciones)
 - test_navigation.py: validación de la navegacion desde la home page
@@ -243,7 +243,8 @@ jobs:
     - name: Ejecutar pruebas con Pytest
       run: |
         export PYTHONPATH=$PYTHONPATH:$(pwd)
-        pytest -v --tb=short --maxfail=3 --disable-warnings
+        pytest -v --tb=short --disable-warnings \
+               --html=reports/report.html --self-contained-html
 
     - name: Carga de artefactos (reportes y screenshots)
       if: ${{ always() }}

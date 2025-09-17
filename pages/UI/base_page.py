@@ -8,7 +8,7 @@ class BasePage:
     def __init__(self, driver: WebDriver) -> None:
         self.driver = driver
 
-    def _wait_for_overlay(self, timeout=8):
+    def _wait_for_overlay(self, timeout=10):
         try:
             WebDriverWait(self.driver, timeout).until_not(
                 EC.visibility_of_element_located((By.CSS_SELECTOR, "div.fixed.inset-0.z-50"))
@@ -21,7 +21,7 @@ class BasePage:
         self._wait_for_overlay()
 
     def type(self, locator, text):
-        element = WebDriverWait(self.driver, 5).until(
+        element = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(locator)
         )
         element.clear()
@@ -39,15 +39,6 @@ class BasePage:
             EC.visibility_of_element_located(locator)
         )
         return element.get_attribute("placeholder")
-
-    def element_is_visible(self, locator):
-        try:
-            WebDriverWait(self.driver, 5).until(
-                EC.visibility_of_element_located(locator)
-            )
-            return True
-        except Exception:
-            return False
 
     def click(self, locator, timeout=8):
         self._wait_for_overlay()

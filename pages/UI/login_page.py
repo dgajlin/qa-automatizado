@@ -1,5 +1,6 @@
 from pages.UI.base_page import BasePage
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
 
 class LoginPage(BasePage):
 
@@ -12,5 +13,7 @@ class LoginPage(BasePage):
         self.type(self.INPUT_EMAIL, email)
         self.type(self.INPUT_PASSWORD, password)
         self.click(self.BUTTON_LOGIN)
-
-        assert "Logged In" in self.text_of_element(self.TEXT_LOGGED_IN)
+        try:
+            return "Logged In" in self.text_of_element(self.TEXT_LOGGED_IN)
+        except TimeoutException:
+            return False

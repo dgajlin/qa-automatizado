@@ -52,7 +52,7 @@ class BasePage:
         except Exception:
             return False
 
-    def click(self, locator, timeout=10, retries=2):
+    def click(self, locator, timeout=8, retries=2):
         for attempt in range(retries):
             self._wait_for_overlay(timeout)
             try:

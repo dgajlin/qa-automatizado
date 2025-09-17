@@ -60,6 +60,7 @@ Estos tests usan **Selenium + Pytest** para validar la experiencia de usuario en
 - test_login_ui.py: login en la aplicación web con Selenium (credenciales válidas/erróneas)
 - test_purchase_e2e.py: flujo end-to-end de compra (login → carrito → checkout → confirmación -> pago)
 - test_validation.py: validación de campos del formulario (placeholders, mensajes de error, restricciones)
+- test_navigation.py: validación de la navegacion desde la home page
 
 ---
 

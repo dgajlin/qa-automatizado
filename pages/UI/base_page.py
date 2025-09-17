@@ -8,16 +8,13 @@ class BasePage:
     def __init__(self, driver: WebDriver) -> None:
         self.driver = driver
 
-    def _wait_for_overlay(self, timeout=6):
+    def _wait_for_overlay(self, timeout=8):
         try:
-            overlays = self.driver.find_elements(By.CSS_SELECTOR, "div.fixed.inset-0.z-50")
-            if overlays and any(o.is_displayed() for o in overlays):
-                WebDriverWait(self.driver, timeout).until(
-                    EC.invisibility_of_element_located((By.CSS_SELECTOR, "div.fixed.inset-0.z-50"))
-                )
+            WebDriverWait(self.driver, timeout).until_not(
+                EC.visibility_of_element_located((By.CSS_SELECTOR, "div.fixed.inset-0.z-50"))
+            )
         except Exception:
-            return False
-        return True
+            pass
 
     def visit(self, url):
         self.driver.get(url)
@@ -38,7 +35,7 @@ class BasePage:
 
     def placeholder_of_element(self, locator):
         self._wait_for_overlay()
-        element = WebDriverWait(self.driver, 5).until(
+        element = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(locator)
         )
         return element.get_attribute("placeholder")
@@ -52,32 +49,16 @@ class BasePage:
         except Exception:
             return False
 
-    def click(self, locator, timeout=10, retries=2):
-        for attempt in range(retries):
-            self._wait_for_overlay(timeout)
-            try:
-                element = WebDriverWait(self.driver, timeout).until(
-                    EC.element_to_be_clickable(locator)
-                )
-                element.click()
-                return
-            except ElementClickInterceptedException:
-                if attempt == retries - 1:
-                    raise
-
-    # def click(self, locator, timeout=8):
-    #     # esperar que no haya overlay
-    #     WebDriverWait(self.driver, timeout).until_not(
-    #         EC.presence_of_element_located((By.CSS_SELECTOR, "div.fixed.inset-0.z-50"))
-    #     )
-    #     try:
-    #         element = WebDriverWait(self.driver, timeout).until(
-    #             EC.element_to_be_clickable(locator)
-    #         )
-    #         element.click()
-    #         return
-    #     except ElementClickInterceptedException:
-    #         raise
+    def click(self, locator, timeout=8):
+        self._wait_for_overlay()
+        try:
+            element = WebDriverWait(self.driver, timeout).until(
+                EC.element_to_be_clickable(locator)
+            )
+            element.click()
+            return
+        except ElementClickInterceptedException:
+            raise
 
     def click_direct(self, locator):
         element = self.driver.find_element(*locator)

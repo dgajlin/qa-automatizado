@@ -169,7 +169,7 @@ qa/
 
 ## 📸 Evidencias
 
-En caso de fallo en los tests de UI, se genera automáticamente un **screenshot** que se guarda en la carpeta `tests/tests_UI/screenshots/`.
+En caso de fallo en los tests de UI, se genera automáticamente un **screenshot** que se guarda en la carpeta `screenshots/`.
 Paralelamente, los reportes se guardan en la carpeta raíz con el nombre ingresado por parametro al ejecutar la prueba. 
 
 ---
@@ -251,6 +251,6 @@ jobs:
         name: test-artifacts
         path: |
           reports/**
-          **/tests/tests_UI/screenshots/**
+          screenshots/**
         if-no-files-found: ignore
 ```

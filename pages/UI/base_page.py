@@ -37,6 +37,7 @@ class BasePage:
         return element.text
 
     def placeholder_of_element(self, locator):
+        self._wait_for_overlay()
         element = WebDriverWait(self.driver, 5).until(
             EC.visibility_of_element_located(locator)
         )

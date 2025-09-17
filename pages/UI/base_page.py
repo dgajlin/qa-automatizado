@@ -52,32 +52,18 @@ class BasePage:
         except Exception:
             return False
 
-    # def click(self, locator, timeout=10, retries=2):
-    #     for attempt in range(retries):
-    #         self._wait_for_overlay(timeout)
-    #         try:
-    #             element = WebDriverWait(self.driver, timeout).until(
-    #                 EC.element_to_be_clickable(locator)
-    #             )
-    #             element.click()
-    #             return
-    #         except ElementClickInterceptedException:
-    #             if attempt == retries - 1:
-    #                 raise
-
-    def click(self, locator, timeout=8):
-        # esperar que no haya overlay
-        WebDriverWait(self.driver, timeout).until_not(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "div.fixed.inset-0.z-50"))
-        )
-        try:
-            element = WebDriverWait(self.driver, timeout).until(
-                EC.element_to_be_clickable(locator)
-            )
-            element.click()
-            return
-        except ElementClickInterceptedException:
-            raise
+    def click(self, locator, timeout=10, retries=2):
+        for attempt in range(retries):
+            self._wait_for_overlay(timeout)
+            try:
+                element = WebDriverWait(self.driver, timeout).until(
+                    EC.element_to_be_clickable(locator)
+                )
+                element.click()
+                return
+            except ElementClickInterceptedException:
+                if attempt == retries - 1:
+                    raise
 
     def click_direct(self, locator):
         element = self.driver.find_element(*locator)

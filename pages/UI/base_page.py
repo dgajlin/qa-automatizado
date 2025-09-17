@@ -66,7 +66,10 @@ class BasePage:
     #                 raise
 
     def click(self, locator, timeout=8):
-        self._wait_for_overlay(timeout)
+        # esperar que no haya overlay
+        WebDriverWait(self.driver, timeout).until_not(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "div.fixed.inset-0.z-50"))
+        )
         try:
             element = WebDriverWait(self.driver, timeout).until(
                 EC.element_to_be_clickable(locator)

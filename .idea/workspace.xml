@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99c83a7c-2653-4018-b9ee-bccc7ccbfa29" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/UI/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/UI/base_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/UI/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/UI/login_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/UI/signup_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/UI/signup_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_API/api/users/test_login_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/api/users/test_login_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_UI/test_login_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_UI/test_login_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_UI/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_UI/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/driver_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/driver_factory.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

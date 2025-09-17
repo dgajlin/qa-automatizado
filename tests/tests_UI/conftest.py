@@ -15,12 +15,19 @@ def pytest_addoption(parser):
         default=os.getenv("HEADLESS", "1"),
         help="Ejecutar pruebas en modo headless (sin interfaz de usuario)"
     )
+    parser.addoption(
+        "--mybrowser",
+        action="store",
+        default=os.getenv("BROWSER", "chrome"),
+        help="Navegador a utilizar: chrome, firefox o edge"
+    )
 
 @pytest.fixture
 def driver(request):
     headless_option = request.config.getoption("--headless")
     headless = str(headless_option).lower() == "1"
-    driver = create_driver(headless=headless)
+    browser = request.config.getoption("--mybrowser").lower()
+    driver = create_driver(browser, headless=headless)
     yield driver
     driver.quit()
 

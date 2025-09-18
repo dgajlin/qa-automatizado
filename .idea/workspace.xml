@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99c83a7c-2653-4018-b9ee-bccc7ccbfa29" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/tests_API/api/aircraft/test_get_aircraft.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/tests_API/api/airports/test_get_airport.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/tests_API/api/bookings/test_get_booking.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/tests_API/api/flights/test_get_flight.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/tests_API/schema/bookings/test_create_schema_bookings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_API/api/airports/test_list_airports.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/api/airports/test_list_airport.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_API/api/bookings/test_delete_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/api/bookings/test_delete_booking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_API/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_API/api/aircraft/test_list_aircraft.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/api/aircraft/test_list_aircraft.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_API/api/airports/test_list_airport.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/api/airports/test_list_airport.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_API/api/bookings/test_list_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/api/bookings/test_list_booking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_API/api/flights/test_list_flight.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/api/flights/test_list_flight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_API/api/users/test_list_users.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/api/users/test_list_users.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +141,7 @@
       <recent name="C:\Users\u185764\PycharmProjects\qa-project-dario-ajlin\pages\API" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_get_aircraft.test_get_invalid_aircraft">
+  <component name="RunManager" selected="Python tests.Python tests for test_login_ui.test_login">
     <configuration name="Python tests for test_create_schema_bookings.test_create_schema" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="qa-project-dario-ajlin" />
       <option name="ENV_FILES" value="" />
@@ -191,18 +187,18 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.tests_API.api.flights.test_get_flight" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_login_ui.test_login" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="qa-project-dario-ajlin" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/api/flights" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_UI" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.tests_API.api.flights.test_get_flight&quot;" />
+      <option name="_new_target" value="&quot;test_login_ui.test_login&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -225,16 +221,16 @@
       <item itemvalue="Python tests.Python tests for test_create_schema_bookings.test_create_schema" />
       <item itemvalue="Python tests.Python tests for test_get_aircraft.test_get_invalid_aircraft" />
       <item itemvalue="Python tests.Python tests for test_get_airport.test_get_invalid_airport" />
-      <item itemvalue="Python tests.Python tests for tests.tests_API.api.flights.test_get_flight" />
+      <item itemvalue="Python tests.Python tests for test_login_ui.test_login" />
       <item itemvalue="Python tests.Python tests for tests.tests_API.api.flights.test_get_flight.test_get_invalid_flight" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_login_ui.test_login" />
         <item itemvalue="Python tests.Python tests for test_get_aircraft.test_get_invalid_aircraft" />
         <item itemvalue="Python tests.Python tests for test_create_schema_bookings.test_create_schema" />
         <item itemvalue="Python tests.Python tests for test_get_airport.test_get_invalid_airport" />
         <item itemvalue="Python tests.Python tests for tests.tests_API.api.flights.test_get_flight.test_get_invalid_flight" />
-        <item itemvalue="Python tests.Python tests for tests.tests_API.api.flights.test_get_flight" />
       </list>
     </recent_temporary>
   </component>

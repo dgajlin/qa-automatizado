@@ -10,8 +10,9 @@ def test_list_flight(auth_headers, api_request, fetch_all_elements):
         limit=100,
     )
 
-    print(f"Cantidad de vuelos: {len(flights)}")
-    print(json.dumps(flights, indent=2, ensure_ascii=False))
+    # Troubleshooting
+    #print(f"Cantidad de vuelos: {len(flights)}")
+    #print(json.dumps(flights, indent=2, ensure_ascii=False))
 
     # Assert explícito de 200 en TODAS las páginas
     assert meta["pages"] >= 1 or len(flights) == 0, "No se obtuvo ninguna página"

@@ -228,9 +228,9 @@ def delete_booking(api_request, auth_headers):
 
 # --------------------- REQUEST CON REINTENTOS ---------------------
 
-RETRIES = 15
+RETRIES = 6
 TIMEOUT = 5
-BACKOFF = 0.02
+BACKOFF = 0.2
 def call_with_retries(method, url, **kw):
     timeout = kw.pop("timeout", TIMEOUT)
     r = None

@@ -69,20 +69,29 @@ Estos tests usan **Selenium + Pytest** para validar la experiencia de usuario en
 Estos tests validan los endpoints REST usando **requests + Pytest**.
 
 **Aircraft**:
-  - test_create_aircraft.py: crea un nuevo avión y valida status/response
-  - test_delete_aircraft.py: elimina un avión existente
-  - test_list_aircraft.py: lista todos los aviones disponibles
-  - test_update_aircraft.py: actualiza datos de un avión
+  - test_create_aircraft.py: crea una nueva aeronave y valida status/response
+  - test_delete_aircraft.py: elimina aeronaves
+  - test_get_aircraft.py: obtiene aeronaves
+  - test_list_aircraft.py: lista aeronaves existentes
+  - test_update_aircraft.py: actualiza datos de una aeronave
 
 **Airports**:
   - test_create_airport.py: crea un nuevo aeropuerto
-  - test_delete_airport.py: elimina un aeropuerto existente
-  - test_list_airports.py: lista aeropuertos
+  - test_delete_airport.py: elimina aeropuertos
+  - test_get_airport.py: obtiene aeropuertos
+  - test_list_airport.py: lista aeropuertos existentes
   - test_update_airport.py: actualiza datos de un aeropuerto
 
+**Bookings**:
+  - test_create_booking.py: crea una reserva nueva
+  - test_delete_booking.py: elimina reservas
+  - test_get_booking.py: obtiene reservas
+  - test_list_booking.py: lista reservas existentes
+  
 **Flights**:
   - test_create_flight.py: crea un vuelo nuevo
-  - test_delete_flight.py: elimina un vuelo
+  - test_delete_flight.py: elimina vuelos
+  - test_get_flight.py: obtiene vuelos
   - test_list_flight.py: lista vuelos existentes
   - test_update_flight.py: actualiza datos de un vuelo
 
@@ -104,6 +113,9 @@ Estos tests validan que las respuestas de la API cumplen con los **JSON Schema**
 
 **Airports**:
   - test_create_schema_airport.py: validar esquema de creación de aeropuerto
+
+**Bookings**:
+  - test_create_schema_bookings.py: validar esquema de creación de reservas
 
 **Flights**:
   - test_create_schema_flight.py: validar esquema de creación de vuelo

@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99c83a7c-2653-4018-b9ee-bccc7ccbfa29" name="Changes" comment="" />
+    <list default="true" id="99c83a7c-2653-4018-b9ee-bccc7ccbfa29" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/tests_API/api/aircraft/test_get_aircraft.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/tests_API/api/airports/test_get_airport.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/tests_API/api/bookings/test_get_booking.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/tests_API/api/flights/test_get_flight.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/tests_API/schema/bookings/test_create_schema_bookings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_API/api/airports/test_list_airports.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/api/airports/test_list_airport.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_API/api/bookings/test_delete_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/api/bookings/test_delete_booking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_API/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_API/conftest.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,91 +42,100 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests for conftest.test_admin_token.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_aircraft.test_create_aircraft.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_airport.test_create_airport.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_booking.test_create_booking.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_flight.test_create_flight.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_payments.test_create_payments.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_schema.test_create_schema (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_schema.test_create_schema (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_schema.test_create_schema.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_schema.test_signup_schema.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_schema_flights.test_create_schema.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_user.test_signup.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_aircraft.test_delete_invalid_aircraft.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_aircraft.test_delete_valid_aircraft.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_airport.test_delete_invalid_airport.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_airport.test_delete_valid_airport.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_booking.test_delete_invalid_booking.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_booking.test_delete_valid_booking.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_flight.test_delete_invalid_flight.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_flight.test_delete_valid_flight.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_user.test_delete_inexistent_user.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_user.test_delete_invalid_users.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_user.test_delete_user_existente.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_user.test_delete_user_inexistente.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_user.test_delete_users.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_delete_user.test_delete_valid_user.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_e2e_purchase.test_checkout_placeholder.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_e2e_purchase.test_login.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_e2e_purchase.test_purchase_product.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_e2e_purchase.test_user_purchase_product_positive.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_get_payments.test_get_payments.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_goto_categories.test_goto_categories.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_gotocategories.test_signup.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_list_aircraft.test_list_aircraft.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_list_airports.test_list_airports.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_list_airports.test_list_users.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_list_booking.test_list_booking.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_list_flight.test_list_airports.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_list_flight.test_list_flight.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_list_payments.test_list_payments.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_list_users.test_list_users.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_login.test_delete_user.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_login.test_delete_users.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_login.test_list_users.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_login.test_login (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_login.test_login.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_login.test_signon.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_login.test_signup.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_login_schema.test_login_schema.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_login_schema.test_login_schema_only.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_login_ui.test_login.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_login_ui.test_signup.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_navigation.test_navigation.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_schema.test_login_request_schema_locally.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_schema.test_login_schema.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_schema.test_signup_schema.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_signup.test_signup.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_signup_schema.test_signup_schema.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_update_aircraft.test_update_aircraft.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_update_airport.test_update_airport.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_update_airport.test_update_user.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_update_airports.test_update_users.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_update_flight.test_update_flight.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_update_user.test_update_users.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_update_users.test_update_users.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_update_users.test_users_update.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_update_users.test_users_update_put.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_validation.test_checkout_placeholder.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_validation.test_checkout_required_fields_alert.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_validation.test_checkout_required_fields_validation.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_validation.test_checkout_validation_error.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for tests.tests_UI.test_e2e_purchase.test_checkout_placeholder.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_signup.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests_UI.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for conftest.test_admin_token.executor": "Run",
+    "Python tests.Python tests for test_create_aircraft.test_create_aircraft.executor": "Run",
+    "Python tests.Python tests for test_create_airport.test_create_airport.executor": "Run",
+    "Python tests.Python tests for test_create_booking.test_create_booking.executor": "Run",
+    "Python tests.Python tests for test_create_flight.test_create_flight.executor": "Run",
+    "Python tests.Python tests for test_create_payments.test_create_payments.executor": "Run",
+    "Python tests.Python tests for test_create_schema.test_create_schema (1).executor": "Run",
+    "Python tests.Python tests for test_create_schema.test_create_schema (2).executor": "Run",
+    "Python tests.Python tests for test_create_schema.test_create_schema.executor": "Run",
+    "Python tests.Python tests for test_create_schema.test_signup_schema.executor": "Run",
+    "Python tests.Python tests for test_create_schema_bookings.test_create_schema.executor": "Run",
+    "Python tests.Python tests for test_create_schema_flights.test_create_schema.executor": "Run",
+    "Python tests.Python tests for test_create_user.test_signup.executor": "Run",
+    "Python tests.Python tests for test_delete_aircraft.test_delete_invalid_aircraft.executor": "Run",
+    "Python tests.Python tests for test_delete_aircraft.test_delete_valid_aircraft.executor": "Run",
+    "Python tests.Python tests for test_delete_airport.test_delete_invalid_airport.executor": "Run",
+    "Python tests.Python tests for test_delete_airport.test_delete_valid_airport.executor": "Run",
+    "Python tests.Python tests for test_delete_booking.test_delete_invalid_booking.executor": "Run",
+    "Python tests.Python tests for test_delete_booking.test_delete_valid_booking.executor": "Run",
+    "Python tests.Python tests for test_delete_flight.test_delete_invalid_flight.executor": "Run",
+    "Python tests.Python tests for test_delete_flight.test_delete_valid_flight.executor": "Run",
+    "Python tests.Python tests for test_delete_user.test_delete_inexistent_user.executor": "Run",
+    "Python tests.Python tests for test_delete_user.test_delete_invalid_users.executor": "Run",
+    "Python tests.Python tests for test_delete_user.test_delete_user_existente.executor": "Run",
+    "Python tests.Python tests for test_delete_user.test_delete_user_inexistente.executor": "Run",
+    "Python tests.Python tests for test_delete_user.test_delete_users.executor": "Run",
+    "Python tests.Python tests for test_delete_user.test_delete_valid_user.executor": "Run",
+    "Python tests.Python tests for test_e2e_purchase.test_checkout_placeholder.executor": "Run",
+    "Python tests.Python tests for test_e2e_purchase.test_login.executor": "Debug",
+    "Python tests.Python tests for test_e2e_purchase.test_purchase_product.executor": "Run",
+    "Python tests.Python tests for test_e2e_purchase.test_user_purchase_product_positive.executor": "Run",
+    "Python tests.Python tests for test_get_aircraft.test_get_airport.executor": "Run",
+    "Python tests.Python tests for test_get_aircraft.test_get_invalid_aircraft.executor": "Run",
+    "Python tests.Python tests for test_get_airport.test_get_airport.executor": "Run",
+    "Python tests.Python tests for test_get_airport.test_get_booking.executor": "Run",
+    "Python tests.Python tests for test_get_airport.test_get_invalid_airport.executor": "Run",
+    "Python tests.Python tests for test_get_booking.test_get_booking.executor": "Run",
+    "Python tests.Python tests for test_get_flights.test_get_airport.executor": "Run",
+    "Python tests.Python tests for test_get_flights.test_get_invalid_flight.executor": "Run",
+    "Python tests.Python tests for test_get_payments.test_get_payments.executor": "Run",
+    "Python tests.Python tests for test_goto_categories.test_goto_categories.executor": "Run",
+    "Python tests.Python tests for test_gotocategories.test_signup.executor": "Run",
+    "Python tests.Python tests for test_list_aircraft.test_list_aircraft.executor": "Run",
+    "Python tests.Python tests for test_list_airports.test_list_airports.executor": "Run",
+    "Python tests.Python tests for test_list_airports.test_list_users.executor": "Run",
+    "Python tests.Python tests for test_list_booking.test_list_booking.executor": "Run",
+    "Python tests.Python tests for test_list_flight.test_list_airports.executor": "Run",
+    "Python tests.Python tests for test_list_flight.test_list_flight.executor": "Run",
+    "Python tests.Python tests for test_list_payments.test_list_payments.executor": "Run",
+    "Python tests.Python tests for test_list_users.test_list_users.executor": "Run",
+    "Python tests.Python tests for test_login.test_delete_user.executor": "Run",
+    "Python tests.Python tests for test_login.test_delete_users.executor": "Run",
+    "Python tests.Python tests for test_login.test_list_users.executor": "Run",
+    "Python tests.Python tests for test_login.test_login (1).executor": "Run",
+    "Python tests.Python tests for test_login.test_login.executor": "Run",
+    "Python tests.Python tests for test_login.test_signon.executor": "Run",
+    "Python tests.Python tests for test_login.test_signup.executor": "Run",
+    "Python tests.Python tests for test_login_schema.test_login_schema.executor": "Run",
+    "Python tests.Python tests for test_login_schema.test_login_schema_only.executor": "Run",
+    "Python tests.Python tests for test_login_ui.test_login.executor": "Run",
+    "Python tests.Python tests for test_login_ui.test_signup.executor": "Run",
+    "Python tests.Python tests for test_navigation.test_navigation.executor": "Run",
+    "Python tests.Python tests for test_schema.test_login_request_schema_locally.executor": "Run",
+    "Python tests.Python tests for test_schema.test_login_schema.executor": "Run",
+    "Python tests.Python tests for test_schema.test_signup_schema.executor": "Run",
+    "Python tests.Python tests for test_signup.test_signup.executor": "Run",
+    "Python tests.Python tests for test_signup_schema.test_signup_schema.executor": "Run",
+    "Python tests.Python tests for test_update_aircraft.test_update_aircraft.executor": "Run",
+    "Python tests.Python tests for test_update_airport.test_update_airport.executor": "Run",
+    "Python tests.Python tests for test_update_airport.test_update_user.executor": "Run",
+    "Python tests.Python tests for test_update_airports.test_update_users.executor": "Run",
+    "Python tests.Python tests for test_update_flight.test_update_flight.executor": "Run",
+    "Python tests.Python tests for test_update_user.test_update_users.executor": "Run",
+    "Python tests.Python tests for test_update_users.test_update_users.executor": "Run",
+    "Python tests.Python tests for test_update_users.test_users_update.executor": "Run",
+    "Python tests.Python tests for test_update_users.test_users_update_put.executor": "Run",
+    "Python tests.Python tests for test_validation.test_checkout_placeholder.executor": "Run",
+    "Python tests.Python tests for test_validation.test_checkout_required_fields_alert.executor": "Run",
+    "Python tests.Python tests for test_validation.test_checkout_required_fields_validation.executor": "Run",
+    "Python tests.Python tests for test_validation.test_checkout_validation_error.executor": "Run",
+    "Python tests.Python tests for tests.tests_UI.test_e2e_purchase.test_checkout_placeholder.executor": "Run",
+    "Python tests.Python tests in test_signup.py.executor": "Run",
+    "Python tests.Python tests in tests_UI.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\u185764\PycharmProjects\qa-project-dario-ajlin\tests\tests_API\schema\users" />
@@ -125,8 +145,53 @@
       <recent name="C:\Users\u185764\PycharmProjects\qa-project-dario-ajlin\pages\API" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_update_user.test_update_users">
-    <configuration name="Python tests for test_delete_flight.test_delete_invalid_flight" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for test_get_aircraft.test_get_invalid_aircraft">
+    <configuration name="Python tests for test_create_schema_bookings.test_create_schema" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="qa-project-dario-ajlin" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/schema/bookings" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_create_schema_bookings.test_create_schema&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_get_aircraft.test_get_invalid_aircraft" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="qa-project-dario-ajlin" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/api/aircraft" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_get_aircraft.test_get_invalid_aircraft&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_get_airport.test_get_invalid_airport" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="qa-project-dario-ajlin" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/api/airports" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_get_airport.test_get_invalid_airport&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.tests_API.api.flights.test_get_flight" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="qa-project-dario-ajlin" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -137,11 +202,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_delete_flight.test_delete_invalid_flight&quot;" />
+      <option name="_new_target" value="&quot;tests.tests_API.api.flights.test_get_flight&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_delete_flight.test_delete_valid_flight" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.tests_API.api.flights.test_get_flight.test_get_invalid_flight" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="qa-project-dario-ajlin" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,69 +217,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_delete_flight.test_delete_valid_flight&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_delete_user.test_delete_invalid_users" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="qa-project-dario-ajlin" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/api/users" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_delete_user.test_delete_invalid_users&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_delete_user.test_delete_valid_user" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="qa-project-dario-ajlin" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/api/users" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_delete_user.test_delete_valid_user&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_update_user.test_update_users" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="qa-project-dario-ajlin" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/api/users" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_update_user.test_update_users&quot;" />
+      <option name="_new_target" value="&quot;tests.tests_API.api.flights.test_get_flight.test_get_invalid_flight&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.Python tests for test_delete_flight.test_delete_invalid_flight" />
-      <item itemvalue="Python tests.Python tests for test_delete_flight.test_delete_valid_flight" />
-      <item itemvalue="Python tests.Python tests for test_delete_user.test_delete_invalid_users" />
-      <item itemvalue="Python tests.Python tests for test_delete_user.test_delete_valid_user" />
-      <item itemvalue="Python tests.Python tests for test_update_user.test_update_users" />
+      <item itemvalue="Python tests.Python tests for test_create_schema_bookings.test_create_schema" />
+      <item itemvalue="Python tests.Python tests for test_get_aircraft.test_get_invalid_aircraft" />
+      <item itemvalue="Python tests.Python tests for test_get_airport.test_get_invalid_airport" />
+      <item itemvalue="Python tests.Python tests for tests.tests_API.api.flights.test_get_flight" />
+      <item itemvalue="Python tests.Python tests for tests.tests_API.api.flights.test_get_flight.test_get_invalid_flight" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_update_user.test_update_users" />
-        <item itemvalue="Python tests.Python tests for test_delete_user.test_delete_valid_user" />
-        <item itemvalue="Python tests.Python tests for test_delete_user.test_delete_invalid_users" />
-        <item itemvalue="Python tests.Python tests for test_delete_flight.test_delete_valid_flight" />
-        <item itemvalue="Python tests.Python tests for test_delete_flight.test_delete_invalid_flight" />
+        <item itemvalue="Python tests.Python tests for test_get_aircraft.test_get_invalid_aircraft" />
+        <item itemvalue="Python tests.Python tests for test_create_schema_bookings.test_create_schema" />
+        <item itemvalue="Python tests.Python tests for test_get_airport.test_get_invalid_airport" />
+        <item itemvalue="Python tests.Python tests for tests.tests_API.api.flights.test_get_flight.test_get_invalid_flight" />
+        <item itemvalue="Python tests.Python tests for tests.tests_API.api.flights.test_get_flight" />
       </list>
     </recent_temporary>
   </component>

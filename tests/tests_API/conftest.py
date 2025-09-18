@@ -286,5 +286,5 @@ def fetch_all_elements(api_request):
                 break
             results.extend(elements)
             skip += limit
-        return results, {"pages": pages, "status_codes": status_codes}
+        return results, {"pages": pages, "status_codes": status_codes,"intentos": len(status_codes)}
     return fetch

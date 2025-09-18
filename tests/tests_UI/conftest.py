@@ -43,7 +43,7 @@ def homepage(driver, base_url_shop) -> HomePage:
 
 @pytest.fixture
 def logged_in(driver, homepage) -> LoginPage:
-    # Logueo a la pagina
+    # Loguear a la pagina
     homepage.go_to_login()
     login = LoginPage(driver)
     login.login(USER_LOGIN_UI, USER_PASSWORD_UI)
@@ -51,7 +51,7 @@ def logged_in(driver, homepage) -> LoginPage:
 
 @pytest.fixture
 def product_added_to_cart(driver, homepage) -> ProductPage:
-    # Ingresar a la categoria Electronics y agregar una Laptop al carrito
+    # Ingresar a la categoria Electronics y Agregar una Laptop al carrito
     homepage.open_electronics_category()
     product = ProductPage(driver)
     product.add_to_cart()
@@ -59,7 +59,7 @@ def product_added_to_cart(driver, homepage) -> ProductPage:
 
 @pytest.fixture
 def checkout_page(driver, product_added_to_cart) -> CheckoutPage:
-    # Desde el carrito navegar a Checkout y devolver CheckoutPage
+    # Desde el carrito Navegar al Checkout y devolver CheckoutPage
     finish = FinishPage(driver)
     finish.checkout()
     return CheckoutPage(driver)

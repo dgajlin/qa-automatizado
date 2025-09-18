@@ -237,6 +237,9 @@ def call_with_retries(method, url, **kw):
     for i in range(RETRIES + 1):
         try:
             r = requests.request(method, url, timeout=timeout, **kw)
+
+            print(f"[Retry {i + 1}/{RETRIES}] {method} {url} -> {r.status_code}")
+
             try:
                 detail = r.json().get("detail")
             except (ValueError, JSONDecodeError, AttributeError):
@@ -286,5 +289,5 @@ def fetch_all_elements(api_request):
                 break
             results.extend(elements)
             skip += limit
-        return results, {"pages": pages, "status_codes": status_codes,"intentos": len(status_codes)}
+        return results, {"pages": pages, "status_codes": status_codes}
     return fetch

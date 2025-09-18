@@ -14,7 +14,7 @@ def test_update_users(temporary_user, api_request, auth_headers, fields_to_updat
     orig_password = user["password"]
     orig_fullname = user["full_name"]
 
-    # Asignacion de nuevos valores
+    # Asignar nuevos valores
     new_password = "NewPass123"
     new_fullname = f"{orig_fullname} Updated"
 

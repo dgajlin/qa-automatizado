@@ -5,12 +5,14 @@ import string
 from datetime import datetime, timedelta
 from time import sleep, time
 from faker import Faker
+from requests.exceptions import JSONDecodeError
 from utils.settings import USER_ADMIN_API, PASS_ADMIN_API
 from pages.API.api_helper import (
     get_admin_token, make_auth_headers, login, signup,
     delete_user_by_id, create_airport, delete_airport_by_code,
     create_aircraft, delete_aircraft_by_code,
-    create_flight, delete_flight_by_code
+    create_flight, delete_flight_by_code,
+    create_booking, delete_booking_by_id
 )
 
 faker = Faker()
@@ -62,7 +64,7 @@ def delete_user(api_request, auth_headers):
         if user_id:
             created_user_ids.append(user_id)
     yield register
-    # Teardown: borrar todos los usuarios registrados
+    # Teardown: borrar todos los usuarios creados
     for uid in created_user_ids:
         ok = delete_user_by_id(uid, auth_headers, api_request)
         if not ok:
@@ -179,6 +181,51 @@ def delete_flight(api_request, auth_headers):
         if not ok:
             print(f"[WARN] No se pudo borrar el vuelo FLIGHT_ID={flight}")
 
+# --------------------- FIXTURES BOOKINGS ---------------------
+
+@pytest.fixture
+def temporary_booking(auth_headers, api_request, temporary_flight):
+    flight_id = temporary_flight["id"]
+    passenger = {
+        "full_name": faker.name(),
+        "passport": faker.bothify(text="??######", letters=string.ascii_uppercase),
+        "seat": faker.bothify(text="##?", letters="ABCDEF"),
+    }
+    # Crear reserva
+    r = create_booking(
+        passenger["full_name"],
+        passenger["passport"],
+        passenger["seat"],
+        flight_id,
+        api_request,
+        auth_headers
+    )
+    booking_data = r.json()
+    booking_id = booking_data.get("id")
+    assert booking_id, f"Create booking no devolvió ID: {booking_data}"
+    yield {
+        "id": booking_id,
+        "flight_id": flight_id,
+        "passenger": passenger
+    }
+    # Teardown
+    ok = delete_booking_by_id(booking_id, api_request, auth_headers)
+    if not ok:
+        print(f"[WARN] No se pudo borrar la reserva {booking_id}")
+
+@pytest.fixture
+def delete_booking(api_request, auth_headers):
+    created_bookings = []
+    def register(booking_id):
+        if booking_id:
+            created_bookings.append(booking_id)
+    yield register
+    # Teardown: borrar todos las reservas creadas
+    for booking in created_bookings:
+        ok = delete_booking_by_id(booking, api_request, auth_headers)
+        if not ok:
+            print(f"[WARN] No se pudo borrar la reserva BOOKING_ID={booking}")
+
 # --------------------- REQUEST CON REINTENTOS ---------------------
 
 RETRIES = 10
@@ -192,14 +239,14 @@ def call_with_retries(method, url, **kw):
             r = requests.request(method, url, timeout=timeout, **kw)
             try:
                 detail = r.json().get("detail")
-            except Exception:
+            except (ValueError, JSONDecodeError, AttributeError):
                 detail = None
             # Reintentar para codigos de error 5xx y "Simulated 4xx bug" (hasta "RETRIES" veces)
             if ((500 <= r.status_code < 600) or (detail == "Simulated 4xx bug")) and i < RETRIES:
                 sleep(BACKOFF * (2 ** i))
                 continue
             return r
-        except requests.RequestException as e:
+        except requests.RequestException:
             if i == RETRIES:
                 raise
             sleep(BACKOFF * (2 ** i))
@@ -232,7 +279,7 @@ def fetch_all_elements(api_request):
             status_codes.append(r.status_code)
             try:
                 elements = r.json()
-            except Exception:
+            except (ValueError, JSONDecodeError):
                 elements = []
                 break
             if not elements:

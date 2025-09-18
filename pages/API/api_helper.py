@@ -1,4 +1,4 @@
-from utils.settings import WEB_BASE_URL_API, AUTH_LOGIN, AUTH_SIGNUP, USERS, AIRPORTS, AIRCRAFT, FLIGHTS
+from utils.settings import WEB_BASE_URL_API, AUTH_LOGIN, AUTH_SIGNUP, USERS, AIRPORTS, AIRCRAFT, FLIGHTS, BOOKINGS
 
 # --------------------- AUTH ---------------------
 
@@ -34,15 +34,8 @@ def signup(email, password, full_name, api_request):
         json=payload
     )
 
-def list_users(auth_headers, fetch_all_elements):
-    # Listar usuarios
-    return fetch_all_elements(
-        f"{WEB_BASE_URL_API}{USERS}",
-        headers=auth_headers
-    )
-
 def delete_user_by_id(user_id, auth_headers, api_request):
-    # Eliminar usuarios por ID
+    # Eliminar usuario por ID
     if not user_id:
         return False
     r = api_request(
@@ -50,12 +43,12 @@ def delete_user_by_id(user_id, auth_headers, api_request):
         f"{WEB_BASE_URL_API}{USERS}/{user_id}",
         headers=auth_headers
     )
-    return r.status_code in (200, 204)
+    return r.status_code == 204
 
 # --------------------- AIRPORTS ---------------------
 
 def create_airport(iata_code, city, country, api_request, auth_headers):
-    # Crear aeropuerto por IATA_CODE
+    # Crear aeropuerto
     payload = {"iata_code": iata_code, "city": city, "country": country}
     return api_request(
         "POST",
@@ -71,12 +64,12 @@ def delete_airport_by_code(iata_code, api_request, auth_headers):
         f"{WEB_BASE_URL_API}{AIRPORTS}/{iata_code}",
         headers=auth_headers
     )
-    return r.status_code in (200, 204)
+    return r.status_code == 204
 
 # --------------------- AIRCRAFT ---------------------
 
 def create_aircraft(tail_number, model, capacity, api_request, auth_headers):
-    # Crear aeronave por TAIL_NUMBER
+    # Crear aeronave
     payload = {"tail_number": tail_number, "model": model, "capacity": capacity}
     return api_request(
         "POST",
@@ -92,7 +85,7 @@ def delete_aircraft_by_code(aircraft_id, api_request, auth_headers):
         f"{WEB_BASE_URL_API}{AIRCRAFT}/{aircraft_id}",
         headers=auth_headers
     )
-    return r.status_code in (200, 204)
+    return r.status_code == 204
 
 # --------------------- FLIGHT ---------------------
 
@@ -120,4 +113,33 @@ def delete_flight_by_code(flight_id, api_request, auth_headers):
         f"{WEB_BASE_URL_API}{FLIGHTS}/{flight_id}",
         headers=auth_headers
     )
-    return r.status_code in (200, 204)
+    return r.status_code == 204
+
+# --------------------- BOOKING ---------------------
+
+def create_booking(full_name, passport, seat, flight_id, api_request, auth_headers):
+    # Crear Reserva
+    passenger = {
+        "full_name": full_name,
+        "passport": passport,
+        "seat": seat,
+    }
+    payload = {
+        "flight_id": flight_id,
+        "passengers": [passenger]
+    }
+    return api_request(
+        "POST",
+        f"{WEB_BASE_URL_API}{BOOKINGS}",
+        headers=auth_headers,
+        json=payload
+    )
+
+def delete_booking_by_id(booking_id, api_request, auth_headers):
+    # Eliminar reserva por BOOKING_ID
+    r = api_request(
+        "DELETE",
+        f"{WEB_BASE_URL_API}{BOOKINGS}/{booking_id}",
+        headers=auth_headers
+    )
+    return r.status_code == 204

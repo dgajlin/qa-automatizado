@@ -13,7 +13,7 @@ def test_update_airport(temporary_airport, api_request, auth_headers, fields_to_
     orig_city = airport["city"]
     orig_country = airport["country"]
 
-    # Asignacion de nuevos valores
+    # Asignar nuevos valores
     new_city = f"{orig_city} Updated"
     new_country = f"{orig_country} Updated"
 

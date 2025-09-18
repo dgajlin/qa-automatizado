@@ -14,7 +14,7 @@ def test_update_aircraft(temporary_aircraft, api_request, auth_headers, fields_t
     orig_model = aircraft["model"]
     orig_capacity = aircraft["capacity"]
 
-    # Asignacion de nuevos valores
+    # Asignar nuevos valores
     new_model = f"{orig_model} Updated"
     new_capacity = f"{orig_capacity + 100}"
 

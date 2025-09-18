@@ -3,18 +3,19 @@ import json
 from utils.settings import WEB_BASE_URL_API, FLIGHTS
 
 @pytest.mark.flight
-def test_list_flight(auth_headers, api_request):
-    r = api_request(
-        "GET",
+def test_list_flight(auth_headers, api_request, fetch_all_elements):
+    flights, meta = fetch_all_elements(
         f"{WEB_BASE_URL_API}{FLIGHTS}",
-        headers=auth_headers
+        headers=auth_headers,
+        limit=100,
     )
-    assert r.status_code == 200, f"list_flights devolvió {r.status_code}: {r.text}"
-    flights = r.json()
-    if isinstance(flights, dict) and "flights" in flights:
-        flights = flights["flights"]
+
     print(f"Cantidad de vuelos: {len(flights)}")
     print(json.dumps(flights, indent=2, ensure_ascii=False))
-    # Asegurar que sea lista
-    assert isinstance(flights, list), "La API no devolvió una lista de vuelos"
+
+    # Assert explícito de 200 en TODAS las páginas
+    assert meta["pages"] >= 1 or len(flights) == 0, "No se obtuvo ninguna página"
+    assert all(code == 200 for code in meta["status_codes"]), (
+        f"Se encontraron errores en la API: {meta}"
+    )
 

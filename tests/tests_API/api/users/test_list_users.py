@@ -9,6 +9,7 @@ def test_list_users(auth_headers, fetch_all_elements):
         headers=auth_headers,
         limit=100,
     )
+
     print(f"Cantidad de usuarios: {len(users)}")
     print(json.dumps(users, indent=2, ensure_ascii=False))
 

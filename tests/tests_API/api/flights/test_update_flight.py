@@ -20,7 +20,7 @@ def test_update_flight(temporary_flight, api_request, auth_headers, fields_to_up
     orig_base_price = flight["base_price"]
     orig_aircraft_id = flight["aircraft_id"]
 
-    # Asignacion de nuevos valores
+    # Asignar nuevos valores
     new_origin = faker.unique.bothify(text="???", letters=string.ascii_uppercase)
     new_destination = faker.unique.bothify(text="???", letters=string.ascii_uppercase)
     departure_time = orig_departure_time

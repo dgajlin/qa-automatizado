@@ -9,6 +9,7 @@ def test_list_airports(auth_headers, fetch_all_elements):
         headers=auth_headers,
         limit=100,
     )
+
     print(f"Cantidad de aeropuertos: {len(airports)}")
     print(json.dumps(airports, indent=2, ensure_ascii=False))
 

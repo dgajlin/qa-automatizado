@@ -228,18 +228,15 @@ def delete_booking(api_request, auth_headers):
 
 # --------------------- REQUEST CON REINTENTOS ---------------------
 
-RETRIES = 10
+RETRIES = 15
 TIMEOUT = 5
-BACKOFF = 0.1
+BACKOFF = 0.02
 def call_with_retries(method, url, **kw):
     timeout = kw.pop("timeout", TIMEOUT)
     r = None
     for i in range(RETRIES + 1):
         try:
             r = requests.request(method, url, timeout=timeout, **kw)
-
-            print(f"[Retry {i + 1}/{RETRIES}] {method} {url} -> {r.status_code}")
-
             try:
                 detail = r.json().get("detail")
             except (ValueError, JSONDecodeError, AttributeError):

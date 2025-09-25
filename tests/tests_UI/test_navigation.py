@@ -11,6 +11,7 @@ from pages.UI.category_page import CategoryPage
 )
 @pytest.mark.navigation
 def test_navigation(driver, homepage, category):
+    # prueba de navegacion en la homepage
     homepage.select_category(category)
     category_page = CategoryPage(driver)
     title = category_page.get_title()

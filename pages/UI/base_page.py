@@ -1,8 +1,10 @@
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import ElementClickInterceptedException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from selenium.webdriver import ActionChains
 
 class BasePage:
     def __init__(self, driver: WebDriver) -> None:
@@ -11,32 +13,39 @@ class BasePage:
     def _wait_for_overlay(self, timeout=10):
         try:
             WebDriverWait(self.driver, timeout).until_not(
-                EC.visibility_of_element_located((By.CSS_SELECTOR, "div.fixed.inset-0.z-50"))
+                ec.visibility_of_element_located((By.CSS_SELECTOR, "div.fixed.inset-0.z-50"))
             )
-        except Exception:
+        except (TimeoutException, NoSuchElementException):
             pass
 
     def visit(self, url):
         self.driver.get(url)
         self._wait_for_overlay()
 
+    def action_click(self, locator, timeout=8):
+        self._wait_for_overlay()
+        element = WebDriverWait(self.driver, timeout).until(
+            ec.element_to_be_clickable(locator)
+        )
+        ActionChains(self.driver).move_to_element(element).click().perform()
+
     def type(self, locator, text):
         element = WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(locator)
+            ec.visibility_of_element_located(locator)
         )
         element.clear()
         element.send_keys(text)
 
     def text_of_element(self, locator):
         element = WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(locator)
+            ec.visibility_of_element_located(locator)
         )
         return element.text
 
     def placeholder_of_element(self, locator):
         self._wait_for_overlay()
         element = WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(locator)
+            ec.visibility_of_element_located(locator)
         )
         return element.get_attribute("placeholder")
 
@@ -44,7 +53,7 @@ class BasePage:
         self._wait_for_overlay()
         try:
             element = WebDriverWait(self.driver, timeout).until(
-                EC.element_to_be_clickable(locator)
+                ec.element_to_be_clickable(locator)
             )
             element.click()
             return

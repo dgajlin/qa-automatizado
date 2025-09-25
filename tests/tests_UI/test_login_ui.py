@@ -7,11 +7,14 @@ faker = Faker()
 
 @pytest.mark.parametrize("email, password, expected", [
     (faker.unique.email(), faker.password(), True),   # credenciales válidas
+    # password muy larga (5000 caracteres) - Se asume que el backend deberia rechazarlo
+    (faker.unique.email(), "X" * 5000, False),
     ("", faker.password(), False),                    # email no ingreado
     (faker.unique.email(), "", False),                # password no ingresada
 ])
 @pytest.mark.login
 def test_login(driver, homepage, email, password, expected):
+    # Prueba de login de usuario
     homepage.go_to_login()
     login = LoginPage(driver)
     result = login.login(email, password)
@@ -20,6 +23,8 @@ def test_login(driver, homepage, email, password, expected):
 @pytest.mark.parametrize("firstname, lastname, email, zipcode, password, expected",
     [
         (faker.first_name(), faker.last_name(), faker.unique.email(), faker.postcode(), faker.password(), True),
+        # password muy larga (5000 caracteres) - Se asume que el backend deberia rechazarlo
+        (faker.first_name(), faker.last_name(), faker.unique.email(), faker.postcode(), "X" * 5000, False),
         ("", faker.last_name(), faker.unique.email(), faker.postcode(), faker.password(), False),
         (faker.first_name(), "", faker.unique.email(), faker.postcode(), faker.password(), False),
         (faker.first_name(), faker.last_name(), "", faker.postcode(), faker.password(), False),

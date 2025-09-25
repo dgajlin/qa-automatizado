@@ -6,6 +6,7 @@ from pages.UI.home_page import HomePage
 from pages.UI.product_page import ProductPage
 from pages.UI.finish_page import FinishPage
 from pages.UI.checkout_page import CheckoutPage
+from pages.UI.cart_page import CartPage
 from pages.UI.login_page import LoginPage
 
 def pytest_addoption(parser):
@@ -63,3 +64,7 @@ def checkout_page(driver, product_added_to_cart) -> CheckoutPage:
     finish = FinishPage(driver)
     finish.checkout()
     return CheckoutPage(driver)
+
+@pytest.fixture
+def cart_page(driver, product_added_to_cart) -> CartPage:
+    return CartPage(driver)

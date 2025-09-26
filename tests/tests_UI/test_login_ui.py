@@ -1,5 +1,6 @@
 import pytest
 from faker import Faker
+# Page Objects
 from pages.UI.login_page import LoginPage
 from pages.UI.signup_page import SignupPage
 

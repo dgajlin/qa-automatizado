@@ -2,9 +2,10 @@ import pytest
 import os
 from datetime import datetime
 from faker import Faker
+from selenium.common.exceptions import UnexpectedAlertPresentException
+from utils.settings import BOOKS_ID, PROGRAMING_BOOK_ID
 # Page Objects
 from pages.UI.checkout_page import CheckoutPage
-from selenium.common.exceptions import UnexpectedAlertPresentException
 
 faker = Faker()
 
@@ -30,11 +31,12 @@ def configure_screenshot():
     ],
 )
 @pytest.mark.validation
-def test_checkout_placeholder(checkout_page: CheckoutPage, locator, expected):
-    driver = checkout_page.driver
+def test_checkout_placeholder(product_factory, cart_page, checkout_page, driver, locator, expected):
     # Obtencion de la configuracion para los screenshots
     filepath = configure_screenshot()
-    # Definicion de un test para la verificacion del valor del placeholder de cada inputbox
+    # Agregar un libro al carrito y navegar al checkout
+    product_factory(BOOKS_ID, PROGRAMING_BOOK_ID)
+    cart_page.go_to_checkout()
     try:
         placeholder = checkout_page.placeholder_of_element(locator).strip()
         assert placeholder == expected, f"Se esperaba '{expected}' pero se obtuvo '{placeholder}'"
@@ -57,13 +59,11 @@ def test_checkout_placeholder(checkout_page: CheckoutPage, locator, expected):
     ],
 )
 @pytest.mark.validation
-def test_checkout_required_fields_validation(
-    checkout_page: CheckoutPage,
+def test_checkout_required_fields_validation(checkout_page, cart_page, product_factory, driver,
     first_name, last_name, email, phone, street_address, city, postcode, country):
-    # Completar el formulario
-    checkout_page.fill_checkout_form(
-        first_name, last_name, email, phone, street_address, city, postcode, country
-    )
+    # Agregar un libro al carrito y navegar al checkout
+    product_factory(BOOKS_ID, PROGRAMING_BOOK_ID)
+    cart_page.go_to_checkout()
     try:
         checkout_page.click_direct(CheckoutPage.BUTTON_PLACE_ORDER)
     except UnexpectedAlertPresentException as e:
@@ -77,15 +77,15 @@ def test_checkout_required_fields_validation(
     ],
 )
 @pytest.mark.validation
-def test_checkout_validation_error(
-    checkout_page: CheckoutPage, first_name, last_name, email, phone, street_address, city, postcode, country, locator, expected_part):
-
+def test_checkout_validation_error(checkout_page, cart_page, product_factory, driver,
+    first_name, last_name, email, phone, street_address, city, postcode, country, locator, expected_part):
+    # Agregar producto y navegar al checkout
+    product_factory(BOOKS_ID, PROGRAMING_BOOK_ID)
+    cart_page.go_to_checkout()
     # Completar el formulario e iniciar proceso de pago
     checkout_page.fill_checkout_form(first_name, last_name, email, phone, street_address, city, postcode, country)
     checkout_page.click_direct(CheckoutPage.BUTTON_PLACE_ORDER)
-
     element = checkout_page.driver.find_element(*locator)
     msg = element.get_attribute("validationMessage")
-
     # Validar que el mensaje contenga lo esperado
     assert expected_part in msg, f"Esperaba que '{expected_part}' esté en '{msg}'"

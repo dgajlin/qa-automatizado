@@ -6,7 +6,6 @@ faker = Faker()
 
 @pytest.mark.e2e
 def test_purchase_product(product_factory, finish_page, checkout_page):
-    # Definicion de un test para la compra de un producto y el pago del mismo (Happy Path)
     # Agregar producto
     product_factory(ELECTRONICS_ID, LAPTOP_ID)
     # Navegar hacia el checkout

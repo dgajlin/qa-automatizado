@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from faker import Faker
 from selenium.common.exceptions import UnexpectedAlertPresentException
-from utils.settings import BOOKS_ID, PROGRAMING_BOOK_ID
+from utils.settings import BOOKS_ID, PROGRAMING_BOOK_ID, ARTHISTORY_BOOK_ID
 # Page Objects
 from pages.UI.checkout_page import CheckoutPage
 
@@ -62,7 +62,7 @@ def test_checkout_placeholder(product_factory, cart_page, checkout_page, driver,
 def test_checkout_required_fields_validation(checkout_page, cart_page, product_factory, driver,
     first_name, last_name, email, phone, street_address, city, postcode, country):
     # Agregar un libro al carrito y navegar al checkout
-    product_factory(BOOKS_ID, PROGRAMING_BOOK_ID)
+    product_factory(BOOKS_ID, ARTHISTORY_BOOK_ID)
     cart_page.go_to_checkout()
     try:
         checkout_page.click_direct(CheckoutPage.BUTTON_PLACE_ORDER)
@@ -79,7 +79,7 @@ def test_checkout_required_fields_validation(checkout_page, cart_page, product_f
 @pytest.mark.validation
 def test_checkout_validation_error(checkout_page, cart_page, product_factory, driver,
     first_name, last_name, email, phone, street_address, city, postcode, country, locator, expected_part):
-    # Agregar producto y navegar al checkout
+    # Agregar un libro al carrito y navegar al checkout
     product_factory(BOOKS_ID, PROGRAMING_BOOK_ID)
     cart_page.go_to_checkout()
     # Completar el formulario e iniciar proceso de pago

@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from utils.settings import WEB_BASE_URL_UI
 
 class HomePage(BasePage):
+
     URL = WEB_BASE_URL_UI
     LINK_SIGNUP = (By.XPATH, "//a[@href='/signup']/button")
     LINK_LOGIN = (By.XPATH, "//a[@href='/login']/button")

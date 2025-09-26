@@ -12,6 +12,7 @@ SMARTPHONE_ID = 21
 LAPTOP_ID = 22
 BOOKS_ID = "Books"
 PROGRAMING_BOOK_ID = 33
+ARTHISTORY_BOOK_ID = 36
 
 # Constantes para pruebas de API
 WEB_BASE_URL_API = os.getenv("WEB_BASE_URL_API", "").strip()

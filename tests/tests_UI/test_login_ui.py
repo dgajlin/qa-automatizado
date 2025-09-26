@@ -8,7 +8,7 @@ faker = Faker()
 
 @pytest.mark.parametrize("email, password, expected", [
     (faker.unique.email(), faker.password(), True),   # credenciales válidas
-    # password muy larga (5000 caracteres) - Se asume que el backend deberia rechazarlo
+    # password muy larga (5000 caracteres) - Se asume que el backend deberia rechazarla
     (faker.unique.email(), "X" * 5000, False),
     ("", faker.password(), False),                    # email no ingreado
     (faker.unique.email(), "", False),                # password no ingresada

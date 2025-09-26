@@ -25,7 +25,7 @@ def test_cart_remove_product(cart_page, product_factory):
     assert cart_page.is_cart_empty(), "El carrito debería estar vacío y mostrar 'Your Cart is Empty'"
 
 @pytest.mark.cart
-def test_cart_price_updates_with_quantity(cart_page, product_factory):
+def test_cart_price_update(cart_page, product_factory):
     # Agregar una laptop al carrito
     product_factory(ELECTRONICS_ID, LAPTOP_ID)
     # Obtener el precio unitario

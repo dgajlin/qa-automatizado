@@ -2,6 +2,7 @@ from pages.UI.base_page import BasePage
 from selenium.webdriver.common.by import By
 
 class CategoryPage(BasePage):
+
     CATEGORY_TITLE = (By.XPATH, "//h1[@id='category-title']")
     LAPTOP_LINK = (By.XPATH, "//a[@href='/product/22']")
 

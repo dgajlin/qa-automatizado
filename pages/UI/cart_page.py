@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
 class CartPage(BasePage):
+
     BTN_PLUS = (By.CSS_SELECTOR, "button svg.lucide-plus")
     BTN_MINUS = (By.CSS_SELECTOR, "button svg.lucide-minus")
     BTN_REMOVE = (By.XPATH, "//button[normalize-space()='Remove']")

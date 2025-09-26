@@ -7,7 +7,7 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver import ActionChains
 
 class BasePage:
-    def __init__(self, driver: WebDriver) -> None:
+    def __init__(self, driver: WebDriver):
         self.driver = driver
 
     def _wait_for_overlay(self, timeout=10):

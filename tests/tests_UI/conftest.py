@@ -33,17 +33,17 @@ def driver(request):
     driver.quit()
 
 @pytest.fixture
-def base_url_shop() -> str:
+def base_url_shop():
     return WEB_BASE_URL_UI
 
 @pytest.fixture
-def homepage(driver, base_url_shop) -> HomePage:
+def homepage(driver, base_url_shop):
     page = HomePage(driver)
     page.load()
     return page
 
 @pytest.fixture
-def logged_in(driver, homepage) -> LoginPage:
+def logged_in(driver, homepage):
     homepage.go_to_login()
     login = LoginPage(driver)
     login.login(USER_LOGIN_UI, USER_PASSWORD_UI)

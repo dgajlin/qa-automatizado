@@ -37,10 +37,21 @@ class BasePage:
         element.send_keys(text)
 
     def text_of_element(self, locator):
-        element = WebDriverWait(self.driver, 10).until(
-            ec.visibility_of_element_located(locator)
-        )
-        return element.text
+        # element = WebDriverWait(self.driver, 10).until(
+        #     ec.visibility_of_element_located(locator)
+        # )
+        # return element.text
+        try:
+            element = WebDriverWait(self.driver, 10).until(
+                ec.presence_of_element_located(locator)
+            )
+            return element.text
+        except TimeoutException:
+            # Captura pantalla + HTML para debug
+            self.driver.save_screenshot("failed_text_of_element.png")
+            with open("failed_text_of_element.html", "w", encoding="utf-8") as f:
+                f.write(self.driver.page_source)
+            raise
 
     def placeholder_of_element(self, locator):
         self._wait_for_overlay()

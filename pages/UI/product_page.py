@@ -3,9 +3,9 @@ from selenium.webdriver.common.by import By
 
 class ProductPage(BasePage):
 
-    PRODUCT_LAPTOP = (By.ID, "add-to-cart-22")
-    GO_TO_CART = CHECKOUT_BTN = (By.XPATH, "//a[@href='/cart']/button")
+    GO_TO_CART = (By.XPATH, "//a[@href='/cart']/button")
 
-    def add_to_cart(self):
-        self.click(self.PRODUCT_LAPTOP)
+    def add_to_cart(self, product_id: int):
+        product_locator = (By.ID, f"add-to-cart-{product_id}")
+        self.click(product_locator)
         self.click(self.GO_TO_CART)

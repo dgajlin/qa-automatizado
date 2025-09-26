@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="99c83a7c-2653-4018-b9ee-bccc7ccbfa29" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_UI/test_login_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_UI/test_login_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_UI/test_navigation.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_UI/test_navigation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_UI/test_cart_modify.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_UI/test_cart_modify.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +40,8 @@
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;Python tests.Python tests for conftest.test_admin_token.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cart_change.test_cart_change.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_cart_modify.test_cart_remove_product.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_create_aircraft.test_create_aircraft.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_create_airport.test_create_airport.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_create_booking.test_create_booking.executor&quot;: &quot;Run&quot;,
@@ -139,19 +140,19 @@
       <recent name="C:\Users\u185764\PycharmProjects\qa-project-dario-ajlin\pages\API" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_login_ui.test_signup">
-    <configuration name="Python tests for test_create_schema_bookings.test_create_schema" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for test_cart_modify.test_cart_remove_product">
+    <configuration name="Python tests for test_cart_modify.test_cart_remove_product" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="qa-project-dario-ajlin" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/schema/bookings" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_UI" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_create_schema_bookings.test_create_schema&quot;" />
+      <option name="_new_target" value="&quot;test_cart_modify.test_cart_remove_product&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -167,21 +168,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_get_aircraft.test_get_invalid_aircraft&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_get_airport.test_get_invalid_airport" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="qa-project-dario-ajlin" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_API/api/airports" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_get_airport.test_get_invalid_airport&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -215,20 +201,35 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for tests.tests_UI.test_cart_modify" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="qa-project-dario-ajlin" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_UI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.tests_UI.test_cart_modify&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Python tests.Python tests for test_cart_modify.test_cart_remove_product" />
+      <item itemvalue="Python tests.Python tests for tests.tests_UI.test_cart_modify" />
       <item itemvalue="Python tests.Python tests for test_login_ui.test_signup" />
-      <item itemvalue="Python tests.Python tests for test_create_schema_bookings.test_create_schema" />
       <item itemvalue="Python tests.Python tests for test_get_aircraft.test_get_invalid_aircraft" />
-      <item itemvalue="Python tests.Python tests for test_get_airport.test_get_invalid_airport" />
       <item itemvalue="Python tests.Python tests for test_login_ui.test_login" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_cart_modify.test_cart_remove_product" />
+        <item itemvalue="Python tests.Python tests for tests.tests_UI.test_cart_modify" />
         <item itemvalue="Python tests.Python tests for test_login_ui.test_signup" />
         <item itemvalue="Python tests.Python tests for test_login_ui.test_login" />
         <item itemvalue="Python tests.Python tests for test_get_aircraft.test_get_invalid_aircraft" />
-        <item itemvalue="Python tests.Python tests for test_create_schema_bookings.test_create_schema" />
-        <item itemvalue="Python tests.Python tests for test_get_airport.test_get_invalid_airport" />
       </list>
     </recent_temporary>
   </component>

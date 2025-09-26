@@ -7,6 +7,11 @@ load_dotenv()
 WEB_BASE_URL_UI = os.getenv("WEB_BASE_URL_UI", "").strip()
 USER_LOGIN_UI = os.getenv("USER_LOGIN_UI", "").strip()
 USER_PASSWORD_UI = os.getenv("USER_PASSWORD_UI", "").strip()
+ELECTRONICS_ID = "Electronics"
+SMARTPHONE_ID = 21
+LAPTOP_ID = 22
+BOOKS_ID = "Books"
+PROGRAMING_BOOK_ID = 33
 
 # Constantes para pruebas de API
 WEB_BASE_URL_API = os.getenv("WEB_BASE_URL_API", "").strip()

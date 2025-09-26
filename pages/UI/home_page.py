@@ -4,7 +4,6 @@ from utils.settings import WEB_BASE_URL_UI
 
 class HomePage(BasePage):
     URL = WEB_BASE_URL_UI
-
     LINK_SIGNUP = (By.XPATH, "//a[@href='/signup']/button")
     LINK_LOGIN = (By.XPATH, "//a[@href='/login']/button")
     IMG_ELECTRONICS = (By.XPATH, '//img[@alt="Electronics"]/ancestor::a[1]')
@@ -14,8 +13,9 @@ class HomePage(BasePage):
     def load(self):
         self.visit(self.URL)
 
-    def open_electronics_category(self):
-        self.click(self.IMG_ELECTRONICS)
+    def open_category(self, category):
+        product_locator = (By.XPATH, f'//img[@alt="{category}"]/ancestor::a[1]')
+        self.click(product_locator)
 
     def go_to_login(self):
         self.click(self.LINK_LOGIN)

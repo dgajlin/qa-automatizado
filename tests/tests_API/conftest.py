@@ -5,8 +5,8 @@ import string
 from datetime import datetime, timedelta
 from time import sleep, time
 from faker import Faker
-from requests.exceptions import JSONDecodeError
-from utils.settings import USER_ADMIN_API, PASS_ADMIN_API
+from requests.exceptions import JSONDecodeError, RequestException, Timeout, ConnectionError
+from utils.settings import WEB_BASE_URL_API, USER_ADMIN_API, PASS_ADMIN_API
 from pages.API.api_helper import (
     get_admin_token, make_auth_headers, login, signup,
     delete_user_by_id, create_airport, delete_airport_by_code,
@@ -16,6 +16,22 @@ from pages.API.api_helper import (
 )
 
 faker = Faker()
+
+# ------------- FIXTURES VERIFICACION API REST -------------
+
+def api_available():
+    try:
+        r = requests.get(WEB_BASE_URL_API, timeout=10)
+        return r.status_code == 200
+    except (Timeout, ConnectionError, RequestException):
+        return False
+
+@pytest.fixture(scope="session", autouse=True)
+def check_api():
+    if not api_available():
+        pytest.skip(
+            f'API externa "{WEB_BASE_URL_API}" no disponible, se saltean tests respectivos', allow_module_level=True
+        )
 
 # --------------------- FIXTURES AUTH ---------------------
 

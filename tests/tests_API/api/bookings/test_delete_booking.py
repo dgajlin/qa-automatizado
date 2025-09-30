@@ -15,6 +15,7 @@ def test_delete_valid_booking(temporary_booking, auth_headers, api_request):
     )
     assert r.status_code == 204, f"delete: {r.status_code} - {r.text}"
 
+
 @pytest.mark.parametrize("booking_id, expected", [
     (faker.unique.bothify(text="BKG####", letters=string.ascii_uppercase), 404),    # reserva inválida
     ("", 405),                                                                      # reserva no ingresada

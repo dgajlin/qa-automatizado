@@ -15,6 +15,7 @@ def test_delete_valid_airport(temporary_airport, auth_headers, api_request):
     )
     assert r.status_code == 204, f"delete: {r.status_code} - {r.text}"
 
+
 @pytest.mark.parametrize("iata_code, expected", [
     (faker.unique.bothify(text="???", letters=string.ascii_uppercase), 204),     # aeropuerto invalido
     ("", 405),                                                                   # aeropuerto no ingresado

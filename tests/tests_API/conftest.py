@@ -8,7 +8,7 @@ from faker import Faker
 from requests.exceptions import JSONDecodeError, RequestException, Timeout, ConnectionError
 from utils.settings import WEB_BASE_URL_API, USER_ADMIN_API, PASS_ADMIN_API
 from pages.API.api_helper import (
-    get_admin_token, make_auth_headers, login, signup,
+    get_admin_token, make_auth_headers, login, signup, create_admin,
     delete_user_by_id, create_airport, delete_airport_by_code,
     create_aircraft, delete_aircraft_by_code,
     create_flight, delete_flight_by_code,
@@ -51,6 +51,16 @@ def api_login(api_request):
     return login
 
 # --------------------- FIXTURES USERS ---------------------
+
+@pytest.fixture
+def create_admin_user(api_request, auth_headers):
+    # Crear usuario admin
+    def _create(email, password, full_name, headers="default"):
+        if headers == "default":
+            headers = auth_headers
+        r = create_admin(email, password, full_name, api_request, headers)
+        return r
+    return _create
 
 @pytest.fixture
 def temporary_user(auth_headers, api_request):

@@ -7,7 +7,7 @@ def login(username, password, api_request):
     payload = {"username": username, "password": password}
     return api_request(
         "POST",
-        f"{WEB_BASE_URL_API}{AUTH_LOGIN}",
+        f"{WEB_BASE_URL_API}{AUTH_LOGIN}/",
         data=payload,
         headers={"Content-Type": "application/x-www-form-urlencoded"}
     )
@@ -24,6 +24,15 @@ def make_auth_headers(token):
     return {"Authorization": f"Bearer {token}"}
 
 # --------------------- USERS ---------------------
+
+def create_admin(email, password, full_name, api_request, auth_headers):
+    payload = {"email": email, "password": password, "full_name": full_name, "role": "admin"}
+    return api_request(
+        "POST",
+        f"{WEB_BASE_URL_API}{USERS}",
+        json=payload,
+        headers=auth_headers
+    )
 
 def signup(email, password, full_name, api_request):
     # Crear usuario

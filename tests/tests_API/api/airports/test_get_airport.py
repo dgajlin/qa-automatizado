@@ -15,6 +15,7 @@ def test_get_valid_airport(temporary_airport, auth_headers, api_request):
     )
     assert r.status_code == 200, f"get: {r.status_code} - {r.text}"
 
+
 @pytest.mark.parametrize("iata_code, expected", [
     (faker.unique.bothify(text="###", letters=string.ascii_uppercase), 404),     # aeropuerto inválido
     ("", 200),                                                                   # aeropuerto no ingresado

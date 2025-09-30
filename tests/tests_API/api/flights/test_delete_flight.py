@@ -15,6 +15,7 @@ def test_delete_valid_flight(temporary_flight, auth_headers, api_request):
     )
     assert r.status_code == 204, f"delete: {r.status_code} - {r.text}"
 
+
 @pytest.mark.parametrize("flight_id, expected", [
     (faker.unique.bothify(text="FL####", letters=string.ascii_uppercase), 204),     # vuelo inválido
     ("", 405),                                                                      # vuelo no ingresado

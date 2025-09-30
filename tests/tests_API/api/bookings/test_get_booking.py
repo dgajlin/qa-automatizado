@@ -15,6 +15,7 @@ def test_get_valid_booking(temporary_booking, auth_headers, api_request):
     )
     assert r.status_code == 200, f"get: {r.status_code} - {r.text}"
 
+
 @pytest.mark.parametrize("booking_id, expected", [
     (faker.unique.bothify(text="bck-######", letters=string.ascii_uppercase), 404),     # reserva inválida
     ("", 200),                                                                          # reserva no ingresada

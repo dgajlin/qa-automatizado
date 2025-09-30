@@ -46,7 +46,6 @@ def test_update_flight(temporary_flight, api_request, auth_headers, fields_to_up
         json=payload,
     )
     assert r.status_code == 200, f"update: {r.status_code} - {r.text}"
-
     api_request(
         "DELETE",
         f"{WEB_BASE_URL_API}{FLIGHTS}/{flight_id}",

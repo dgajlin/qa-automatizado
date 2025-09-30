@@ -97,6 +97,7 @@ Estos tests validan los endpoints REST usando **requests + Pytest**.
   - test_update_flight.py: actualiza datos de un vuelo
 
 **Users**:
+  - test_create_admin.py: creacion de usuario administrador
   - test_login_api.py: login de usuario
   - test_signup.py: signup de usuario nuevo
   - test_list_users.py: obtener lista de usuarios

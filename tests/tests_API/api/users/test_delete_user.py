@@ -14,6 +14,7 @@ def test_delete_valid_user(temporary_user, auth_headers, api_request):
     )
     assert r.status_code == 204, f"delete: {r.status_code} - {r.text}"
 
+
 @pytest.mark.parametrize("user_id, expected", [
     ("usr-00000000", 204),      # usuario invalido
     ("", 204),                  # usuario no ingresado

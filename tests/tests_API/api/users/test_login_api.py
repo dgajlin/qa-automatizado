@@ -17,7 +17,7 @@ def test_login(api_request, username, password, expected):
     payload = {"username": username, "password": password}
     r = api_request(
         "POST",
-        f"{WEB_BASE_URL_API}{AUTH_LOGIN}",
+        f"{WEB_BASE_URL_API}{AUTH_LOGIN}/",
         data=payload,
         headers={"Content-Type": "application/x-www-form-urlencoded"},
     )
